@@ -169,25 +169,25 @@ def replaceValues():
     xml_pattern   = pattern[ 0 ]
     stats_pattern = pattern[ 1 ]
     print( "cpu checking stats: ", xml_pattern )
-    cpuid = -1
+    cpuid = 0
     with open(util.stats_file, "r") as f:
       for stats_line in f.readlines():
         if re.search( stats_pattern, stats_line ):
           value = str( util.extract_val(stats_line) )
           cpuid_pattern = re.findall( r'system.[a-zA-Z]+[0-9]+.', stats_line )
+          print( "checking... value: ", value )
           if len(cpuid_pattern) != 0:
             cpuid = int(re.findall(r'[0-9]+', cpuid_pattern[0])[0])
 
-          if cpuid != -1:
-            util.stats_for_core[cpuid][xml_pattern] = int(value)
-            for line_index in range(len(util.xml_core[cpuid])):
-              xml_line = util.xml_core[cpuid][line_index]
-              if re.search( xml_pattern, xml_line ):
-                util.xml_core[cpuid][line_index] = re.sub(r'\d+', value, xml_line)
-                print( "replace item in cpu[", cpuid, "]: ", xml_pattern, util.xml_core[cpuid][line_index], value )
-                print( util.stats_for_core )
-                break
-            break
+          util.stats_for_core[cpuid][xml_pattern] = int(value)
+          for line_index in range(len(util.xml_core[cpuid])):
+            xml_line = util.xml_core[cpuid][line_index]
+            if re.search( xml_pattern, xml_line ):
+              util.xml_core[cpuid][line_index] = re.sub(r'\d+', value, xml_line)
+              print( "replace item in cpu[", cpuid, "]: ", xml_pattern, util.xml_core[cpuid][line_index], value )
+              print( util.stats_for_core )
+              break
+          break
 
   for pattern in util.pattern_tail_list:
     xml_pattern   = pattern[ 0 ]

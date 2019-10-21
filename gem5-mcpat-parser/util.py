@@ -33,8 +33,9 @@ pattern_head_list = [
                 ]
 
 pattern_cpu_list = [
-                ("int_instructions"          , re.compile(r'int_instructions')),
-                ("fp_instructions"           , re.compile(r'fp_instructions')),
+#                ("int_instructions"          , re.compile(r'int_instructions')),
+#                ("fp_instructions"           , re.compile(r'fp_instructions')),
+                ("total_instructions"        , re.compile(r'iew.\S+::total')),
                 ("branch_instructions"       , re.compile(r'branchPred.lookups')),
                 ("branch_mispredictions"     , re.compile(r'branchPredindirectMispredicted')),
                 ("load_instructions"         , re.compile(r'load_instructions')),
@@ -44,8 +45,18 @@ pattern_cpu_list = [
                 ("IntMult"                   , re.compile(r'IntMult')),
                 ("IntDiv"                    , re.compile(r'IntDiv')),
                 ("No_OpClass"                , re.compile(r'No_OpClass')),
+                ("FloatAdd"                  , re.compile(r'FloatAdd')),
+                ("FloatCmp"                  , re.compile(r'FloatCmp')),
+                ("FloatCvt"                  , re.compile(r'FloatCvt')),
+                ("FloatMult"                 , re.compile(r'FloatMult')),
+                ("FloatMultAcc"              , re.compile(r'FloatMultAcc')),
+                ("FloatDiv"                  , re.compile(r'FloatDiv')),
+                ("FloatMisc"                 , re.compile(r'FloatMisc')),
+                ("FloatSqrt"                 , re.compile(r'FloatSqrt')),
                 ("MemRead"                   , re.compile(r'MemRead')),
                 ("MemWrite"                  , re.compile(r'MemWrite')),
+                ("FloatMemRead"              , re.compile(r'FloatMemRead')),
+                ("FloatMemWrite"             , re.compile(r'FloatMemWrite')),
                 ("total_cycles"              , re.compile(r'numCycles')),
                 ("idle_cycles"               , re.compile(r'num_idle_cycles')),
                 ("icache_read_accesses"      , re.compile(r'icache.ReadReq_accesses')),
@@ -527,10 +538,18 @@ def memory_ports( cpuid ):
 
 #      <stat name="total_instructions" value="7204430173"/>
 def total_instructions( cpuid ):
-  total_insts = stats_for_core[ cpuid ][ "int_instructions" ] +\
-                stats_for_core[ cpuid ][ "fp_instructions" ] +\
-                stats_for_core[ cpuid ][ "load_instructions" ] +\
-                stats_for_core[ cpuid ][ "store_instructions" ]
+  total_insts = stats_for_core[ cpuid ][ "total_instructions" ]
+  total_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
+                stats_for_core[ cpuid ][ "IntMult" ] +\
+                stats_for_core[ cpuid ][ "IntDiv" ] +\
+                stats_for_core[ cpuid ][ "FloatAdd" ] +\
+                stats_for_core[ cpuid ][ "FloatCmp" ] +\
+                stats_for_core[ cpuid ][ "FloatCvt" ] +\
+                stats_for_core[ cpuid ][ "FloatMult" ] +\
+                stats_for_core[ cpuid ][ "FloatMultAcc" ] +\
+                stats_for_core[ cpuid ][ "FloatDiv" ] +\
+                stats_for_core[ cpuid ][ "FloatMisc" ] +\
+                stats_for_core[ cpuid ][ "FloatSqrt" ]
   return str(total_insts)
 
 def committed_int_instructions( cpuid ):
@@ -798,7 +817,7 @@ special_pattern_cpu_list = [
           ("store_buffer_size"              , store_buffer_size),
           ("load_buffer_size"               , load_buffer_size),
           ("memory_ports"                   , memory_ports),
-          ("total_instructions"             , total_instructions),
+#          ("total_instructions"             , total_instructions),
           ("committed_int_instructions"     , committed_int_instructions),
           ("committed_fp_instructions"      , committed_fp_instructions),
           ("pipeline_duty_cycle"            , pipeline_duty_cycle),
