@@ -38,9 +38,9 @@ pattern_cpu_list = [
                 ("total_instructions"        , re.compile(r'iew.\S+::total')),
                 ("branch_instructions"       , re.compile(r'branchPred.lookups')),
                 ("branch_mispredictions"     , re.compile(r'branchPredindirectMispredicted')),
-                ("load_instructions"         , re.compile(r'load_instructions')),
-                ("store_instructions"        , re.compile(r'store_instructions')),
-                ("committed_instructions"    , re.compile(r'committedInsts')),
+#                ("load_instructions"         , re.compile(r'load_instructions')),
+#                ("store_instructions"        , re.compile(r'store_instructions')),
+                ("committed_instructions"    , re.compile(r'num_committed_insts')),
                 ("IntAlu"                    , re.compile(r'IntAlu')),
                 ("IntMult"                   , re.compile(r'IntMult')),
                 ("IntDiv"                    , re.compile(r'IntDiv')),
@@ -58,15 +58,15 @@ pattern_cpu_list = [
                 ("FloatMemRead"              , re.compile(r'FloatMemRead')),
                 ("FloatMemWrite"             , re.compile(r'FloatMemWrite')),
                 ("total_cycles"              , re.compile(r'numCycles')),
-                ("idle_cycles"               , re.compile(r'num_idle_cycles')),
+#                ("idle_cycles"               , re.compile(r'num_idle_cycles')),
                 ("icache_read_accesses"      , re.compile(r'icache.ReadReq_accesses')),
                 ("icache_read_misses"        , re.compile(r'icache.ReadReq_misses')),
-                ("icache_conflicts"          , re.compile(r'icache.replacements')),
+#                ("icache_conflicts"          , re.compile(r'icache.replacements')),
                 ("dcache_read_accesses"      , re.compile(r'dcache.ReadReq_accesses')),
                 ("dcache_read_misses"        , re.compile(r'dcache.ReadReq_misses')),
                 ("dcache_write_accesses"     , re.compile(r'dcache.WriteReq_accesses')),
                 ("dcache_write_misses"       , re.compile(r'dcache.WriteReq_misses')),
-                ("dcache_conflicts"          , re.compile(r'dcache.replacements')),
+                ("dcache_conflicts"          , re.compile(r'L1_Replacement ')),
 
                 ]
 
@@ -585,8 +585,7 @@ def pipeline_duty_cycle( cpuid ):
 #      <stat name="idle_cycles" value="0"/>
 #      <stat name="busy_cycles" value="2367485854"/>
 def busy_cycles( cpuid ):
-  busy_cycle = stats_for_core[ cpuid ]["total_cycles"] -\
-               stats_for_core[ cpuid ]["idle_cycles"]
+  busy_cycle = stats_for_core[ cpuid ]["total_cycles"]
   return str(busy_cycle)
 
 #      <!-- Alu stats by default, the processor has one FPU that includes the divider and
