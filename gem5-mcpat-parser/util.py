@@ -59,14 +59,20 @@ pattern_cpu_list = [
                 ("FloatMemWrite"             , re.compile(r'FloatMemWrite')),
                 ("total_cycles"              , re.compile(r'numCycles')),
 #                ("idle_cycles"               , re.compile(r'num_idle_cycles')),
-                ("icache_read_accesses"      , re.compile(r'icache.ReadReq_accesses')),
-                ("icache_read_misses"        , re.compile(r'icache.ReadReq_misses')),
+#                ("icache_read_accesses"      , re.compile(r'icache.ReadReq_accesses')),
+                ("icache_read_accesses"      , re.compile(r'l1i_cntrl\d+.L1cache.demand_accesses')),
+                ("icache_read_misses"        , re.compile(r'l1i_cntrl\d+.L1cache.demand_misses')),
 #                ("icache_conflicts"          , re.compile(r'icache.replacements')),
-                ("dcache_read_accesses"      , re.compile(r'dcache.ReadReq_accesses')),
-                ("dcache_read_misses"        , re.compile(r'dcache.ReadReq_misses')),
-                ("dcache_write_accesses"     , re.compile(r'dcache.WriteReq_accesses')),
-                ("dcache_write_misses"       , re.compile(r'dcache.WriteReq_misses')),
-                ("dcache_conflicts"          , re.compile(r'L1_Replacement ')),
+#                ("dcache_read_accesses"      , re.compile(r'l1d_cntrl\d+.L1cache.demand_accesses')),
+#                ("dcache_read_misses"        , re.compile(r'l1d_cntrl\d+.L1cache.demand_misses')),
+                ("dcache_write_accesses"     , re.compile(r'l1d_cntrl\d+.L1cache.demand_accesses')),
+                ("dcache_write_misses"       , re.compile(r'l1d_cntrl\d+.L1cache.demand_misses')),
+                ("dcache_conflicts"          , re.compile(r'L1_Replacement::total')),
+
+                ("int_regfile_reads"         , re.compile(r'int_regfile_reads')),
+                ("int_regfile_writes"        , re.compile(r'int_regfile_writes')),
+                ("float_regfile_reads"       , re.compile(r'fp_regfile_reads')),
+                ("float_regfile_writes"      , re.compile(r'fp_regfile_writes')),
 
                 ]
 
@@ -539,17 +545,17 @@ def memory_ports( cpuid ):
 #      <stat name="total_instructions" value="7204430173"/>
 def total_instructions( cpuid ):
   total_insts = stats_for_core[ cpuid ][ "total_instructions" ]
-  total_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
-                stats_for_core[ cpuid ][ "IntMult" ] +\
-                stats_for_core[ cpuid ][ "IntDiv" ] +\
-                stats_for_core[ cpuid ][ "FloatAdd" ] +\
-                stats_for_core[ cpuid ][ "FloatCmp" ] +\
-                stats_for_core[ cpuid ][ "FloatCvt" ] +\
-                stats_for_core[ cpuid ][ "FloatMult" ] +\
-                stats_for_core[ cpuid ][ "FloatMultAcc" ] +\
-                stats_for_core[ cpuid ][ "FloatDiv" ] +\
-                stats_for_core[ cpuid ][ "FloatMisc" ] +\
-                stats_for_core[ cpuid ][ "FloatSqrt" ]
+#  total_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
+#                stats_for_core[ cpuid ][ "IntMult" ] +\
+#                stats_for_core[ cpuid ][ "IntDiv" ] +\
+#                stats_for_core[ cpuid ][ "FloatAdd" ] +\
+#                stats_for_core[ cpuid ][ "FloatCmp" ] +\
+#                stats_for_core[ cpuid ][ "FloatCvt" ] +\
+#                stats_for_core[ cpuid ][ "FloatMult" ] +\
+#                stats_for_core[ cpuid ][ "FloatMultAcc" ] +\
+#                stats_for_core[ cpuid ][ "FloatDiv" ] +\
+#                stats_for_core[ cpuid ][ "FloatMisc" ] +\
+#                stats_for_core[ cpuid ][ "FloatSqrt" ]
   return str(total_insts)
 
 def committed_int_instructions( cpuid ):
@@ -739,6 +745,12 @@ def dcache_config( cpuid ):
            dcache_cache_policy( cpuid )
   return config
 
+def dcache_read_accesses( cpuid ):
+  return "0"
+
+def dcache_read_misses( cpuid ):
+  return "0"
+
 # FIXME: wait for Tuan to generate the stats for decode and window
 def rename_reads( cpuid ):
   return committed_int_instructions( cpuid )
@@ -768,18 +780,6 @@ def fp_inst_window_writes( cpuid ):
   return committed_fp_instructions( cpuid )
 
 def fp_inst_window_wakeup_accesses( cpuid ):
-  return committed_fp_instructions( cpuid )
-
-def int_regfile_reads( cpuid ):
-  return committed_int_instructions( cpuid )
-
-def int_regfile_writes( cpuid ):
-  return committed_int_instructions( cpuid )
-
-def float_regfile_reads( cpuid ):
-  return committed_fp_instructions( cpuid )
-
-def float_regfile_writes( cpuid ):
   return committed_fp_instructions( cpuid )
 
 
@@ -826,6 +826,9 @@ special_pattern_cpu_list = [
           ("mul_accesses"                   , mul_accesses),
           ("icache_config"                  , icache_config),
           ("dcache_config"                  , dcache_config),
+          ("dcache_read_accesses"           , dcache_read_accesses),
+          ("dcache_read_misses"             , dcache_read_misses),
+
 
           # FIXME: wait for Tuan to generate the stats for decode and window
           ("rename_reads"                   , rename_reads),
@@ -838,10 +841,6 @@ special_pattern_cpu_list = [
           ("fp_inst_window_reads"           , fp_inst_window_reads),
           ("fp_inst_window_writes"          , fp_inst_window_writes),
           ("fp_inst_window_wakeup_accesses" , fp_inst_window_wakeup_accesses),
-          ("int_regfile_reads"              , int_regfile_reads),
-          ("int_regfile_writes"             , int_regfile_writes),
-          ("float_regfile_reads"            , float_regfile_reads),
-          ("float_regfile_writes"           , float_regfile_writes),
 
         ]
 

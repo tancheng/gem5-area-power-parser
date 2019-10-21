@@ -45,12 +45,12 @@ omitted -->
     <param name="virtual_address_width" value="64"/>
     <param name="physical_address_width" value="52"/>
     <param name="virtual_memory_page_size" value="4096"/>
-    <!-- address width determines the tag_width in Cache, LSQ and buffers in cache controller 
+    <!-- address width determines the tag_width in Cache, LSQ and buffers in cache controller
 	 default value is machine_bits, if not set -->
     <stat name="total_cycles" value="56638"/>
     <stat name="idle_cycles" value="0"/>
     <stat name="busy_cycles" value="56638"/>
-    <!--This page size(B) is complete different from the page size in Main memo section. this page size is the size of 
+    <!--This page size(B) is complete different from the page size in Main memo section. this page size is the size of
 	virtual memory from OS/Archi perspective; the page size in Main memo section is the actual physical line in a DRAM bank  -->
     <!-- *********************** cores ******************* -->
     <component id="system.cpu0" name="core0">
@@ -69,24 +69,24 @@ omitted -->
       <!-- inorder/OoO; 1 inorder; 0 OOO-->
       <param name="number_hardware_threads" value="1"/>
       <!-- number_instruction_fetch_ports(icache ports) is always 1 in single-thread processor,
-	   it only may be more than one in SMT processors. BTB ports always equals to fetch ports since 
+	   it only may be more than one in SMT processors. BTB ports always equals to fetch ports since
 	   branch information in consecutive branch instructions in the same fetch group can be read out from BTB once.-->
       <param name="fetch_width" value="1"/>
       <!-- fetch_width determines the size of cachelines of L1 cache block -->
       <param name="number_instruction_fetch_ports" value="1"/>
       <param name="decode_width" value="1"/>
-      <!-- decode_width determines the number of ports of the 
+      <!-- decode_width determines the number of ports of the
 	   renaming table (both RAM and CAM) scheme -->
       <param name="issue_width" value="1"/>
       <param name="peak_issue_width" value="1"/>
-      <!-- issue_width determines the number of ports of Issue window and other logic 
+      <!-- issue_width determines the number of ports of Issue window and other logic
 	   as in the complexity effective processors paper; issue_width==dispatch_width -->
       <param name="commit_width" value="1"/>
       <!-- commit_width determines the number of ports of register files -->
       <param name="fp_issue_width" value="2"/>
       <param name="prediction_width" value="1"/>
       <!-- number of branch instructions can be predicted simultaneously-->
-      <!-- Current version of McPAT does not distinguish int and floating point pipelines 
+      <!-- Current version of McPAT does not distinguish int and floating point pipelines
 	   Theses parameters are reserved for future use.-->
       <param name="pipelines_per_core" value="1,1"/>
       <!--integer_pipeline and floating_pipelines, if the floating_pipelines is 0, then the pipeline is shared-->
@@ -115,15 +115,15 @@ omitted -->
       <!-- X86-64 has 16GPR -->
       <param name="archi_Regs_FRF_size" value="16"/>
       <!-- MMX + XMM -->
-      <!--  if OoO processor, phy_reg number is needed for renaming logic, 
+      <!--  if OoO processor, phy_reg number is needed for renaming logic,
 	   renaming logic is for both integer and floating point insts.  -->
       <param name="phy_Regs_IRF_size" value="16"/>
       <param name="phy_Regs_FRF_size" value="16"/>
       <!-- rename logic -->
       <param name="rename_scheme" value="0"/>
-      <!-- can be RAM based(0) or CAM based(1) rename scheme 
+      <!-- can be RAM based(0) or CAM based(1) rename scheme
 	   RAM-based scheme will have free list, status table;
-	   CAM-based scheme have the valid bit in the data field of the CAM 
+	   CAM-based scheme have the valid bit in the data field of the CAM
 	   both RAM and CAM need RAM-based checkpoint table, checkpoint_depth=# of in_flight instructions;
 	   Detailed RAT Implementation see TR -->
       <param name="register_windows_size" value="0"/>
@@ -155,7 +155,7 @@ omitted -->
       <stat name="committed_fp_instructions" value="0"/>
       <stat name="pipeline_duty_cycle" value="1"/>
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
-      <!-- the following cycle stats are used for heterogeneous cores only, 
+      <!-- the following cycle stats are used for heterogeneous cores only,
 	   please ignore them if homogeneous cores -->
       <stat name="total_cycles" value="56639"/>
       <stat name="idle_cycles" value="0"/>
@@ -182,15 +182,15 @@ omitted -->
       <stat name="fp_inst_window_writes" value="0"/>
       <stat name="fp_inst_window_wakeup_accesses" value="0"/>
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="6925"/>
-      <stat name="float_regfile_reads" value="0"/>
-      <stat name="int_regfile_writes" value="6925"/>
+      <stat name="int_regfile_reads" value="8047"/>
+      <stat name="float_regfile_reads" value="12"/>
+      <stat name="int_regfile_writes" value="4059"/>
       <stat name="float_regfile_writes" value="0"/>
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="0"/>
       <stat name="context_switches" value="0"/>
       <!-- Number of Windows switches (number of function calls and returns)-->
-      <!-- Alu stats by default, the processor has one FPU that includes the divider and 
+      <!-- Alu stats by default, the processor has one FPU that includes the divider and
 	   multiplier. The fpu accesses should include accesses to multiplier and divider  -->
       <stat name="ialu_accesses" value="4476"/>
       <stat name="fpu_accesses" value="6"/>
@@ -198,17 +198,17 @@ omitted -->
       <stat name="cdb_alu_accesses" value="0"/>
       <stat name="cdb_mul_accesses" value="0"/>
       <stat name="cdb_fpu_accesses" value="0"/>
-      <!-- multiple cycle accesses should be counted multiple times, 
-	   otherwise, McPAT can use internal counter for different floating point instructions 
+      <!-- multiple cycle accesses should be counted multiple times,
+	   otherwise, McPAT can use internal counter for different floating point instructions
 	   to get final accesses. But that needs detailed info for floating point inst mix -->
-      <!--  currently the performance simulator should 
-	   make sure all the numbers are final numbers, 
-	   including the explicit read/write accesses, 
+      <!--  currently the performance simulator should
+	   make sure all the numbers are final numbers,
+	   including the explicit read/write accesses,
 	   and the implicit accesses such as replacements and etc.
 	   Future versions of McPAT may be able to reason the implicit access
 	   based on param and stats of last level cache
 	   The same rule applies to all cache access stats too!  -->
-      <!-- following is AF for max power computation. 
+      <!-- following is AF for max power computation.
 	   Do not change them, unless you understand them-->
       <stat name="IFU_duty_cycle" value="0.25"/>
       <!--depends on Icache line size and instruction issue rate -->
@@ -233,19 +233,19 @@ omitted -->
         <stat name="total_accesses" value="0"/>
         <stat name="total_misses" value="0"/>
         <stat name="conflicts" value="0"/>
-        <!-- there is no write requests to itlb although writes happen to itlb after miss, 
+        <!-- there is no write requests to itlb although writes happen to itlb after miss,
 	     which is actually a replacement -->
       </component>
       <component id="system.cpu0.icache" name="icache">
-        <!-- there is no write requests to itlb although writes happen to it after miss, 
+        <!-- there is no write requests to itlb although writes happen to it after miss,
 	     which is actually a replacement -->
         <param name="icache_config" value="32768, 64, 2, 1, 1, 2, 64, 1"/>
         <!-- the parameters are capacity,block_width, associativity, bank, throughput w.r.t. core clock, latency w.r.t. core clock,output_width, cache policy,  -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="icache_read_accesses" value="0"/>
-        <stat name="icache_read_misses" value="0"/>
+        <stat name="icache_read_accesses" value="855"/>
+        <stat name="icache_read_misses" value="266"/>
         <stat name="icache_conflicts" value="0"/>
       </component>
       <component id="system.cpu0.dtlb" name="dtlb">
@@ -261,10 +261,10 @@ omitted -->
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
         <stat name="dcache_read_accesses" value="0"/>
-        <stat name="dcache_write_accesses" value="219430504"/>
+        <stat name="dcache_write_accesses" value="2232"/>
         <stat name="dcache_read_misses" value="0"/>
-        <stat name="dcache_write_misses" value="480858"/>
-        <stat name="dcache_conflicts" value="0"/>
+        <stat name="dcache_write_misses" value="145"/>
+        <stat name="dcache_conflicts" value="37"/>
       </component>
       <param name="number_of_BTB" value="2"/>
       <component id="system.cpu0.BTB" name="BTB">
@@ -274,7 +274,7 @@ omitted -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
         <stat name="read_accesses" value="0"/>
         <!--See IFU code for guideline -->
-        <stat name="write_accesses" value="385528180"/>
+        <stat name="write_accesses" value="0"/>
       </component>
     </component>
     <component id="system.L1Directory0" name="L1Directory0">
@@ -290,7 +290,7 @@ omitted -->
       <param name="ports" value="1,1,1"/>
       <!-- number of r, w, and rw search ports -->
       <param name="device_type" value="0"/>
-      <!-- although there are multiple access types, 
+      <!-- although there are multiple access types,
 	   Performance simulator needs to cast them into reads or writes
 	   e.g. the invalidates can be considered as writes -->
       <stat name="read_accesses" value="0"/>
@@ -312,7 +312,7 @@ omitted -->
       <param name="ports" value="1,1,1"/>
       <!-- number of r, w, and rw search ports -->
       <param name="device_type" value="0"/>
-      <!-- altough there are multiple access types, 
+      <!-- altough there are multiple access types,
 	   Performance simulator needs to cast them into reads or writes
 	   e.g. the invalidates can be considered as writes -->
       <stat name="read_accesses" value="0"/>
@@ -386,8 +386,8 @@ omitted -->
       <stat name="memory_accesses" value="0"/>
       <stat name="memory_reads" value="0"/>
       <stat name="memory_writes" value="0"/>
-      <!-- McPAT does not track individual mc, instead, it takes the total accesses and calculate 
-	   the average power per MC or per channel. This is sufficient for most application. 
+      <!-- McPAT does not track individual mc, instead, it takes the total accesses and calculate
+	   the average power per MC or per channel. This is sufficient for most application.
 	   Further track down can be easily added in later versions. -->
     </component>
     <!--**********************************************************************-->
