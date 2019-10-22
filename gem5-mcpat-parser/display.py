@@ -79,8 +79,12 @@ def main():
 #      f.write( line )
       process( line )
         
-  print( area_list )
-  print( power_list )
+  print( "----- area ------" )
+  for comp_area in area_list:
+    print( comp_area[1] )
+  print( "----- power ------" )
+  for comp_power in power_list:
+    print( comp_power[1] )
 
 
 main()

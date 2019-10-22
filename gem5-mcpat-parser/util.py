@@ -10,7 +10,7 @@ import re
 # input/output files
 #------------------------------------------------------------------------------
 
-stats_file = "./stats.txt"
+stats_file = "./add_stats.txt"
 config_file = "./config.ini"
 template_file = "./template.xml"
 output_dir = "./output"
@@ -170,13 +170,19 @@ def number_of_cores():
   return str(core_count)
 
 def system_total_cycles():
-  if m_total_cycles != -1:
-    return m_total_cycles
-  with open(stats_file, "r") as f:
-    for line in f.readlines():
-      if re.search( re.compile( r'^sim_ticks' ), line ):
-        value = extract_val(line)
-  return str(value/500)
+  total_cycle = 0
+  for cpuid in range(core_count):
+    if total_cycle < stats_for_core[cpuid]["total_cycles"]:
+      total_cycle = stats_for_core[cpuid]["total_cycles"]
+  return str(total_cycle)
+
+#  if m_total_cycles != -1:
+#    return m_total_cycles
+#  with open(stats_file, "r") as f:
+#    for line in f.readlines():
+#      if re.search( re.compile( r'^sim_ticks' ), line ):
+#        value = extract_val(line)
+#  return str(value/500)
 
 # FIXME: change this to see the difference
 def system_idle_cycles():
