@@ -50,10 +50,12 @@ def isArea(line):
   return ("Area " in line)
 
 def isPower(line):
-  return ("Peak Dynamic =" in line)
+  return ("Runtime Dynamic =" in line)
 
 def getValue(line):
-  return re.findall("\d+\.\d+", line)[0]
+  if " 0 " in line:
+    return "0"
+  return re.findall("\d+\S+ ", line)[0].strip()
 
 def process(line):
   global current_region

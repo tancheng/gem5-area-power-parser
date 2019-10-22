@@ -1,5 +1,94 @@
 McPAT (version 1.2 of June, 2014) is computing the target processor...
  
+cache_sz: 32768, nbanks: 1
+cache_sz: 32768, nbanks: 1
+cache_sz: 160, nbanks: 1
+cache_sz: 160, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 512, nbanks: 2
+cache_sz: 512, nbanks: 2
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 512, nbanks: 2
+cache_sz: 512, nbanks: 2
+cache_sz: 512, nbanks: 2
+cache_sz: 32768, nbanks: 1
+cache_sz: 32768, nbanks: 1
+cache_sz: 160, nbanks: 1
+cache_sz: 160, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 320, nbanks: 1
+cache_sz: 320, nbanks: 1
+cache_sz: 320, nbanks: 1
+cache_sz: 320, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 128, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 160, nbanks: 1
+cache_sz: 160, nbanks: 1
+cache_sz: 160, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 528, nbanks: 1
+cache_sz: 528, nbanks: 1
+cache_sz: 80, nbanks: 1
+cache_sz: 80, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 16, nbanks: 1
+cache_sz: 16, nbanks: 1
+cache_sz: 64, nbanks: 1
+cache_sz: 4096, nbanks: 1
+cache_sz: 4096, nbanks: 1
+cache_sz: 288, nbanks: 1
+cache_sz: 288, nbanks: 1
+cache_sz: 288, nbanks: 1
+cache_sz: 576, nbanks: 1
+cache_sz: 576, nbanks: 1
+cache_sz: 576, nbanks: 1
+cache_sz: 576, nbanks: 1
+cache_sz: 64, nbanks: 1
 
 McPAT (version 1.2 of June, 2014) results (current print level is 4, please increase print level to see the details in components): 
 *****************************************************************************************
@@ -10,23 +99,23 @@ McPAT (version 1.2 of June, 2014) results (current print level is 4, please incr
 
 *****************************************************************************************
 Processor: 
-  Area = 1.88698 mm^2
-  Peak Power = 4.57058 W
-  Total Leakage = 2.08018 W
-  Peak Dynamic = 2.4904 W
-  Subthreshold Leakage = 2.07547 W
-  Subthreshold Leakage with power gating = 0.809493 W
-  Gate Leakage = 0.00471613 W
-  Runtime Dynamic = 0.206969 W
+  Area = 1.43059 mm^2
+  Peak Power = 4.29792 W
+  Total Leakage = 1.96036 W
+  Peak Dynamic = 2.33755 W
+  Subthreshold Leakage = 1.95611 W
+  Subthreshold Leakage with power gating = 0.722954 W
+  Gate Leakage = 0.00425281 W
+  Runtime Dynamic = 0.206959 W
 
   Total Cores: 1 cores 
   Device Type= ITRS low operating power device type
-    Area = 1.63144 mm^2
-    Peak Dynamic = 0.291481 W
-    Subthreshold Leakage = 0.384497 W
-    Subthreshold Leakage with power gating = 0.283835 W
-    Gate Leakage = 0.00148379 W
-    Runtime Dynamic = 0.00310665 W
+    Area = 1.17506 mm^2
+    Peak Dynamic = 0.138636 W
+    Subthreshold Leakage = 0.265138 W
+    Subthreshold Leakage with power gating = 0.197295 W
+    Gate Leakage = 0.00102047 W
+    Runtime Dynamic = 0.00309694 W
 
   Total First Level Directory: 
   Device Type= ITRS high performance device type
@@ -48,35 +137,35 @@ Processor:
 
 *****************************************************************************************
 Core:
-      Area = 1.63144 mm^2
-      Peak Dynamic = 0.291481 W
-      Subthreshold Leakage = 0.384497 W
-      Subthreshold Leakage with power gating = 0.283835 W
-      Gate Leakage = 0.00148379 W
-      Runtime Dynamic = 0.00310665 W
+      Area = 1.17506 mm^2
+      Peak Dynamic = 0.138636 W
+      Subthreshold Leakage = 0.265138 W
+      Subthreshold Leakage with power gating = 0.197295 W
+      Gate Leakage = 0.00102047 W
+      Runtime Dynamic = 0.00309694 W
 
       Instruction Fetch Unit:
-        Area = 0.499007 mm^2
-        Peak Dynamic = 0.0840892 W
-        Subthreshold Leakage = 0.11993 W
-        Subthreshold Leakage with power gating = 0.0904418 W
-        Gate Leakage = 0.000417266 W
-        Runtime Dynamic = 0.00116517 W
+        Area = 0.204766 mm^2
+        Peak Dynamic = 0.0333733 W
+        Subthreshold Leakage = 0.0524286 W
+        Subthreshold Leakage with power gating = 0.0409723 W
+        Gate Leakage = 0.000173317 W
+        Runtime Dynamic = 0.00112198 W
 
           Instruction Cache:
-            Area = 0.334282 mm^2
-            Peak Dynamic = 0.0725403 W
-            Subthreshold Leakage = 0.100918 W
-            Subthreshold Leakage with power gating = 0.0754953 W
-            Gate Leakage = 0.000385253 W
-            Runtime Dynamic = 0.000110829 W
+            Area = 0.175842 mm^2
+            Peak Dynamic = 0.0246577 W
+            Subthreshold Leakage = 0.0482748 W
+            Subthreshold Leakage with power gating = 0.0378591 W
+            Gate Leakage = 0.000162237 W
+            Runtime Dynamic = 4.98841e-05 W
 
           Branch Target Buffer:
-            Area = 0.159221 mm^2
-            Peak Dynamic = 0.00410924 W
-            Subthreshold Leakage = 0.0174618 W
-            Subthreshold Leakage with power gating = 0.0137982 W
-            Gate Leakage = 2.56079e-05 W
+            Area = 0.0233426 mm^2
+            Peak Dynamic = 0.00126149 W
+            Subthreshold Leakage = 0.00257982 W
+            Subthreshold Leakage with power gating = 0.0019478 W
+            Gate Leakage = 4.40272e-06 W
             Runtime Dynamic = 0 W
 
           Branch Predictor:
@@ -85,7 +174,7 @@ Core:
             Subthreshold Leakage = 0.00041828 W
             Subthreshold Leakage with power gating = 0.000329597 W
             Gate Leakage = 2.01957e-06 W
-            Runtime Dynamic = 7.642e-06 W
+            Runtime Dynamic = 4.66038e-06 W
 
               Global Predictor:
                 Area = 0.00056207 mm^2
@@ -93,7 +182,7 @@ Core:
                 Subthreshold Leakage = 7.50485e-05 W
                 Subthreshold Leakage with power gating = 5.93559e-05 W
                 Gate Leakage = 4.14114e-07 W
-                Runtime Dynamic = 1.9105e-06 W
+                Runtime Dynamic = 1.16509e-06 W
 
               Local Predictor:
               L1_Local Predictor:
@@ -102,7 +191,7 @@ Core:
                 Subthreshold Leakage = 7.50485e-05 W
                 Subthreshold Leakage with power gating = 5.93559e-05 W
                 Gate Leakage = 4.14114e-07 W
-                Runtime Dynamic = 1.9105e-06 W
+                Runtime Dynamic = 1.16509e-06 W
 
               L2_Local Predictor:
                 Area = 0.00056207 mm^2
@@ -110,7 +199,7 @@ Core:
                 Subthreshold Leakage = 7.50485e-05 W
                 Subthreshold Leakage with power gating = 5.93559e-05 W
                 Gate Leakage = 4.14114e-07 W
-                Runtime Dynamic = 1.9105e-06 W
+                Runtime Dynamic = 1.16509e-06 W
 
               Chooser:
                 Area = 0.00056207 mm^2
@@ -118,7 +207,7 @@ Core:
                 Subthreshold Leakage = 7.50485e-05 W
                 Subthreshold Leakage with power gating = 5.93559e-05 W
                 Gate Leakage = 4.14114e-07 W
-                Runtime Dynamic = 1.9105e-06 W
+                Runtime Dynamic = 1.16509e-06 W
 
               RAS:
                 Area = 0.00139173 mm^2
@@ -134,7 +223,7 @@ Core:
             Subthreshold Leakage = 4.69322e-05 W
             Subthreshold Leakage with power gating = 3.75309e-05 W
             Gate Leakage = 1.46167e-07 W
-            Runtime Dynamic = 4.97673e-05 W
+            Runtime Dynamic = 5.00852e-05 W
 
           Instruction Decoder:
             Area = 0.0010919 mm^2
@@ -142,15 +231,15 @@ Core:
             Subthreshold Leakage = 0.000989737 W
             Subthreshold Leakage with power gating = 0.00071261 W
             Gate Leakage = 3.15098e-06 W
-            Runtime Dynamic = 0.000939266 W
+            Runtime Dynamic = 0.000945265 W
 
       Renaming Unit:
-        Area = 0.0141891 mm^2
-        Peak Dynamic = 0.00351999 W
-        Subthreshold Leakage = 0.00116422 W
-        Subthreshold Leakage with power gating = 0.000898622 W
-        Gate Leakage = 4.72038e-06 W
-        Runtime Dynamic = 0.000415698 W
+        Area = 0.0142676 mm^2
+        Peak Dynamic = 0.00357766 W
+        Subthreshold Leakage = 0.00118802 W
+        Subthreshold Leakage with power gating = 0.000915761 W
+        Gate Leakage = 4.99249e-06 W
+        Runtime Dynamic = 0.000474548 W
 
           Int Front End RAT:
             Area = 0.00736584 mm^2
@@ -158,7 +247,7 @@ Core:
             Subthreshold Leakage = 0.000610875 W
             Subthreshold Leakage with power gating = 0.000478642 W
             Gate Leakage = 1.69293e-06 W
-            Runtime Dynamic = 0.000111759 W
+            Runtime Dynamic = 0.000112473 W
 
           FP Front End RAT:
             Area = 0.00258966 mm^2
@@ -174,7 +263,7 @@ Core:
             Subthreshold Leakage = 6.97533e-05 W
             Subthreshold Leakage with power gating = 5.45627e-05 W
             Gate Leakage = 2.69102e-07 W
-            Runtime Dynamic = 4.84315e-05 W
+            Runtime Dynamic = 4.87408e-05 W
 
           Int Retire RAT: 
             Area = 0.00056207 mm^2
@@ -182,7 +271,7 @@ Core:
             Subthreshold Leakage = 7.50485e-05 W
             Subthreshold Leakage with power gating = 5.93559e-05 W
             Gate Leakage = 4.14114e-07 W
-            Runtime Dynamic = 2.48375e-05 W
+            Runtime Dynamic = 2.49962e-05 W
 
           FP Retire RAT:
             Area = 0.00110231 mm^2
@@ -201,20 +290,20 @@ Core:
             Runtime Dynamic = 0 W
 
       Load Store Unit:
-        Area = 0.477668 mm^2
-        Peak Dynamic = 0.157336 W
-        Subthreshold Leakage = 0.13201 W
-        Subthreshold Leakage with power gating = 0.0978812 W
-        Gate Leakage = 0.000516199 W
-        Runtime Dynamic = 0.000211289 W
+        Area = 0.247072 mm^2
+        Peak Dynamic = 0.0550558 W
+        Subthreshold Leakage = 0.0622951 W
+        Subthreshold Leakage with power gating = 0.0479537 W
+        Gate Leakage = 0.000222121 W
+        Runtime Dynamic = 0.000141067 W
 
           Data Cache:
-            Area = 0.410984 mm^2
-            Peak Dynamic = 0.151832 W
-            Subthreshold Leakage = 0.126337 W
-            Subthreshold Leakage with power gating = 0.0937969 W
-            Gate Leakage = 0.000491618 W
-            Runtime Dynamic = 0.000153622 W
+            Area = 0.20128 mm^2
+            Peak Dynamic = 0.049537 W
+            Subthreshold Leakage = 0.0565988 W
+            Subthreshold Leakage with power gating = 0.0438524 W
+            Gate Leakage = 0.000197268 W
+            Runtime Dynamic = 6.89823e-05 W
 
           LoadQ:
             Area = 0.011487 mm^2
@@ -233,11 +322,11 @@ Core:
             Runtime Dynamic = 0 W
 
       Memory Management Unit:
-        Area = 0.0236998 mm^2
-        Peak Dynamic = 0.00183559 W
-        Subthreshold Leakage = 0.00530914 W
-        Subthreshold Leakage with power gating = 0.00382258 W
-        Runtime Dynamic = 0.000144169 W
+        Area = 0.0237783 mm^2
+        Peak Dynamic = 0.00187163 W
+        Subthreshold Leakage = 0.00533294 W
+        Subthreshold Leakage with power gating = 0.00383972 W
+        Runtime Dynamic = 0.000180211 W
 
           Itlb:
             Area = 0.0116929 mm^2
@@ -256,11 +345,11 @@ Core:
             Runtime Dynamic = 0 W
 
       Execution Unit:
-        Area = 0.595655 mm^2
-        Peak Dynamic = 0.0447001 W
-        Subthreshold Leakage = 0.120549 W
-        Subthreshold Leakage with power gating = 0.086806 W
-        Runtime Dynamic = 0.00117032 W
+        Area = 0.595733 mm^2
+        Peak Dynamic = 0.0447578 W
+        Subthreshold Leakage = 0.120573 W
+        Subthreshold Leakage with power gating = 0.0868231 W
+        Runtime Dynamic = 0.00117913 W
 
           Register Files:
             Area = 0.0101221 mm^2
@@ -268,7 +357,7 @@ Core:
             Subthreshold Leakage = 0.000603802 W
             Subthreshold Leakage with power gating = 0.000436153 W
             Gate Leakage = 2.21679e-06 W
-            Runtime Dynamic = 0.000256422 W
+            Runtime Dynamic = 0.000238813 W
 
               Integer RF:
                 Area = 0.00506107 mm^2
@@ -276,7 +365,7 @@ Core:
                 Subthreshold Leakage = 0.000301901 W
                 Subthreshold Leakage with power gating = 0.000218077 W
                 Gate Leakage = 1.10839e-06 W
-                Runtime Dynamic = 0.000256422 W
+                Runtime Dynamic = 0.000238813 W
 
               Floating Point RF:
                 Area = 0.00506107 mm^2
@@ -292,7 +381,7 @@ Core:
             Subthreshold Leakage = 0.00147979 W
             Subthreshold Leakage with power gating = 0.00107438 W
             Gate Leakage = 6.35284e-06 W
-            Runtime Dynamic = 0.000152505 W
+            Runtime Dynamic = 0.000153479 W
 
               Instruction Window:
                 Area = 0.00157129 mm^2
@@ -300,7 +389,7 @@ Core:
                 Subthreshold Leakage = 0.000243537 W
                 Subthreshold Leakage with power gating = 0.000175347 W
                 Gate Leakage = 1.25069e-06 W
-                Runtime Dynamic = 0.000152505 W
+                Runtime Dynamic = 0.000153479 W
 
               FP Instruction Window:
                 Area = 0.00576484 mm^2
@@ -324,7 +413,7 @@ Core:
             Subthreshold Leakage = 0.0126048 W
             Subthreshold Leakage with power gating = 0.00907544 W
             Gate Leakage = 5.23655e-05 W
-            Runtime Dynamic = 0.000530722 W
+            Runtime Dynamic = 0.000498504 W
 
           Floating Point Units (FPUs) (Count: 1 ):
             Area = 0.475917 mm^2

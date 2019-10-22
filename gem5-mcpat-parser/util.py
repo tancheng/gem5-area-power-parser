@@ -10,7 +10,7 @@ import re
 # input/output files
 #------------------------------------------------------------------------------
 
-stats_file = "./add_stats.txt"
+stats_file = "./ld_stats.txt"
 config_file = "./config.ini"
 template_file = "./template.xml"
 output_dir = "./output"

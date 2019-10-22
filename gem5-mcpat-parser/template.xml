@@ -269,7 +269,7 @@ omitted -->
       <param name="number_of_BTB" value="2"/>
       <component id="system.cpu0.BTB" name="BTB">
         <!-- all the buffer related are optional -->
-        <param name="BTB_config" value="5120,4,2,2,1,1"/>
+        <param name="BTB_config" value="512,4,2,2,1,1"/>
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
         <stat name="read_accesses" value="0"/>
