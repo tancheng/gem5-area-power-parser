@@ -61,10 +61,10 @@ pattern_cpu_list = [
                 ("icache_read_accesses"      , re.compile(r'l1i_cntrl\d+.L1cache.demand_accesses')),
                 ("icache_read_misses"        , re.compile(r'l1i_cntrl\d+.L1cache.demand_misses')),
 #                ("icache_conflicts"          , re.compile(r'icache.replacements')),
-#                ("dcache_read_accesses"      , re.compile(r'l1d_cntrl\d+.L1cache.demand_accesses')),
-#                ("dcache_read_misses"        , re.compile(r'l1d_cntrl\d+.L1cache.demand_misses')),
-                ("dcache_write_accesses"     , re.compile(r'l1d_cntrl\d+.L1cache.demand_accesses')),
-                ("dcache_write_misses"       , re.compile(r'l1d_cntrl\d+.L1cache.demand_misses')),
+                ("dcache_read_accesses"      , re.compile(r'l1d_cntrl\d+.L1cache.demand_accesses')),
+                ("dcache_read_misses"        , re.compile(r'l1d_cntrl\d+.L1cache.demand_misses')),
+#                ("dcache_write_accesses"     , re.compile(r'l1d_cntrl\d+.L1cache.demand_accesses')),
+#                ("dcache_write_misses"       , re.compile(r'l1d_cntrl\d+.L1cache.demand_misses')),
                 ("dcache_conflicts"          , re.compile(r'L1_Replacement::total')),
 
                 ("int_regfile_reads"         , re.compile(r'int_regfile_reads')),
@@ -763,10 +763,10 @@ def dcache_config( cpuid ):
            dcache_cache_policy( cpuid )
   return config
 
-def dcache_read_accesses( cpuid ):
+def dcache_write_accesses( cpuid ):
   return "0"
 
-def dcache_read_misses( cpuid ):
+def dcache_write_misses( cpuid ):
   return "0"
 
 # FIXME: wait for Tuan to generate the stats for decode and window
@@ -853,8 +853,8 @@ special_pattern_cpu_list = [
           ("mul_accesses"                   , mul_accesses),
           ("icache_config"                  , icache_config),
           ("dcache_config"                  , dcache_config),
-          ("dcache_read_accesses"           , dcache_read_accesses),
-          ("dcache_read_misses"             , dcache_read_misses),
+          ("dcache_write_accesses"          , dcache_write_accesses),
+          ("dcache_write_misses"            , dcache_write_misses),
           ("load_instructions"              , load_instructions),
           ("store_instructions"             , store_instructions),
 

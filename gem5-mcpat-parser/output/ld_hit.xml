@@ -260,10 +260,10 @@ omitted -->
         <param name="dcache_config" value="32768, 64, 2, 1, 1, 2, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="dcache_read_accesses" value="0"/>
-        <stat name="dcache_write_accesses" value="4000"/>
-        <stat name="dcache_read_misses" value="0"/>
-        <stat name="dcache_write_misses" value="1"/>
+        <stat name="dcache_read_accesses" value="4000"/>
+        <stat name="dcache_write_accesses" value="0"/>
+        <stat name="dcache_read_misses" value="1"/>
+        <stat name="dcache_write_misses" value="0"/>
         <stat name="dcache_conflicts" value="0"/>
       </component>
       <param name="number_of_BTB" value="2"/>
