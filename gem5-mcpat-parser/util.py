@@ -10,8 +10,8 @@ import re
 # input/output files
 #------------------------------------------------------------------------------
 
-config_file = "./config.ini"
-template_file = "./template.xml"
+config_file = "./input/config.ini"
+template_file = "./input/template.xml"
 
 #------------------------------------------------------------------------------
 # xml lines
