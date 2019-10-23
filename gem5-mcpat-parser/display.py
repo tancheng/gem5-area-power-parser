@@ -9,9 +9,10 @@
 
 import os
 import re
+import sys
 
 output_dir = "./output"
-input_file = "/mcpat_result"
+input_file = sys.argv[1]
 output_file = "/distribution"
 target_region = "Core"
 is_inside_target_region = False
@@ -76,7 +77,7 @@ def process(line):
       last_indent = current_indent
 
 def main():
-  with open(output_dir + input_file, "r") as f:
+  with open(input_file, "r") as f:
     for line in f.readlines():
 #      f.write( line )
       process( line )

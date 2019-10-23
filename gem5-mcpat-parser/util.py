@@ -10,10 +10,8 @@ import re
 # input/output files
 #------------------------------------------------------------------------------
 
-stats_file = "./ld_stats.txt"
 config_file = "./config.ini"
 template_file = "./template.xml"
-output_dir = "./output"
 
 #------------------------------------------------------------------------------
 # xml lines
@@ -564,26 +562,42 @@ def total_instructions( cpuid ):
 #                stats_for_core[ cpuid ][ "FloatSqrt" ]
   return str(total_insts)
 
+def int_instructions( cpuid ):
+  committed_int_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
+                        stats_for_core[ cpuid ][ "IntMult" ] +\
+                        stats_for_core[ cpuid ][ "IntDiv" ] +\
+                        stats_for_core[ cpuid ][ "No_OpClass" ] -\
+                        stats_for_core[ cpuid ][ "branch_instructions" ]
+  return str(committed_int_insts)
+
+
+def fp_instructions( cpuid ):
+  committed_fp_insts = stats_for_core[ cpuid ]["FloatCmp"] +\
+                       stats_for_core[ cpuid ][ "FloatCvt" ] +\
+                       stats_for_core[ cpuid ][ "FloatMult" ] +\
+                       stats_for_core[ cpuid ][ "FloatMultAcc" ] +\
+                       stats_for_core[ cpuid ][ "FloatDiv" ] +\
+                       stats_for_core[ cpuid ][ "FloatMisc" ] +\
+                       stats_for_core[ cpuid ][ "FloatSqrt" ]
+  return str(committed_fp_insts)
+
+
 def committed_int_instructions( cpuid ):
   committed_int_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
                         stats_for_core[ cpuid ][ "IntMult" ] +\
                         stats_for_core[ cpuid ][ "IntDiv" ] +\
-                        stats_for_core[ cpuid ][ "No_OpClass" ] +\
-                        stats_for_core[ cpuid ][ "MemRead" ] +\
-                        stats_for_core[ cpuid ][ "MemWrite" ]
-
+                        stats_for_core[ cpuid ][ "No_OpClass" ] -\
+                        stats_for_core[ cpuid ][ "branch_instructions" ]
   return str(committed_int_insts)
 
 def committed_fp_instructions( cpuid ):
-  committed_fp_insts = stats_for_core[ cpuid ]["committed_instructions"] -\
-                       stats_for_core[ cpuid ][ "IntAlu" ] -\
-                       stats_for_core[ cpuid ][ "IntMult" ] -\
-                       stats_for_core[ cpuid ][ "IntDiv" ] -\
-                       stats_for_core[ cpuid ][ "No_OpClass" ] -\
-                       stats_for_core[ cpuid ][ "MemRead" ] -\
-                       stats_for_core[ cpuid ][ "MemWrite" ]
-  if committed_fp_insts < 0:
-    return "0"
+  committed_fp_insts = stats_for_core[ cpuid ]["FloatCmp"] +\
+                       stats_for_core[ cpuid ][ "FloatCvt" ] +\
+                       stats_for_core[ cpuid ][ "FloatMult" ] +\
+                       stats_for_core[ cpuid ][ "FloatMultAcc" ] +\
+                       stats_for_core[ cpuid ][ "FloatDiv" ] +\
+                       stats_for_core[ cpuid ][ "FloatMisc" ] +\
+                       stats_for_core[ cpuid ][ "FloatSqrt" ]
   return str(committed_fp_insts)
 
 #      <stat name="pipeline_duty_cycle" value="1"/>
@@ -639,13 +653,11 @@ def ialu_accesses( cpuid ):
   return str(ialu_accesses)
 
 def fpu_accesses( cpuid ):
-  fpu_accesses = stats_for_core[ cpuid ]["IntMult"] +\
-                 stats_for_core[ cpuid ]["IntDiv"] +\
-                 int(committed_fp_instructions( cpuid ))
-  return str(fpu_accesses)
+  return str(committed_fp_instructions( cpuid ))
 
 def mul_accesses( cpuid ):
-  return str(stats_for_core[ cpuid ]["IntMult"])
+  return str(stats_for_core[ cpuid ]["IntMult"] +\
+             stats_for_core[ cpuid ]["IntDiv"])
 
 def getConfigInDomain( domain, item ):
   with open(config_file, "r") as f:
@@ -788,6 +800,13 @@ def fp_inst_window_writes( cpuid ):
 def fp_inst_window_wakeup_accesses( cpuid ):
   return committed_fp_instructions( cpuid )
 
+def load_instructions( cpuid ):
+  return str(stats_for_core[ cpuid ][ "MemRead" ] +\
+             stats_for_core[ cpuid ][ "FloatMemRead" ])
+
+def store_instructions( cpuid ):
+  return str(stats_for_core[ cpuid ][ "MemWrite" ] +\
+             stats_for_core[ cpuid ][ "FloatMemWrite" ])
 
 #------------------------------------------------------------------------------
 # special xml param name -> calculation function
@@ -823,6 +842,8 @@ special_pattern_cpu_list = [
           ("load_buffer_size"               , load_buffer_size),
           ("memory_ports"                   , memory_ports),
 #          ("total_instructions"             , total_instructions),
+          ("int_instructions"               , int_instructions),
+          ("fp_instructions"                , fp_instructions),
           ("committed_int_instructions"     , committed_int_instructions),
           ("committed_fp_instructions"      , committed_fp_instructions),
           ("pipeline_duty_cycle"            , pipeline_duty_cycle),
@@ -834,6 +855,8 @@ special_pattern_cpu_list = [
           ("dcache_config"                  , dcache_config),
           ("dcache_read_accesses"           , dcache_read_accesses),
           ("dcache_read_misses"             , dcache_read_misses),
+          ("load_instructions"              , load_instructions),
+          ("store_instructions"             , store_instructions),
 
 
           # FIXME: wait for Tuan to generate the stats for decode and window

@@ -14,11 +14,14 @@ import re
 import json
 import argparse
 import util
+import sys
 
 output_dir = "./output"
+stats_file = sys.argv[1]
+out_file = sys.argv[2]
 
 def readFiles():
-  if not os.path.isfile( util.stats_file ):
+  if not os.path.isfile( stats_file ):
     print("No stats.txt")
     exit(0)
 
@@ -26,14 +29,14 @@ def readFiles():
     print("No config.ini")
     exit(0)
 
-  if not os.path.isfile( util.stats_file ):
+  if not os.path.isfile( stats_file ):
     print("No template.xml")
     exit(0)
 
 def writeFiles(lines, mode):
-  if not os.path.exists(output_dir):
-    os.mkdir(output_dir)
-  with open(output_dir + "/new_config.xml", mode) as f:
+#  if not os.path.exists(output_dir):
+#    os.mkdir(output_dir)
+  with open(out_file, mode) as f:
     for line in lines:
       f.write(line)
 
@@ -153,7 +156,7 @@ def replaceValues():
     stats_pattern = pattern[ 1 ]
     print( "head checking stats: ", xml_pattern )
     cpuid = -1
-    with open(util.stats_file, "r") as f:
+    with open(stats_file, "r") as f:
       for stats_line in f.readlines():
         if re.search( stats_pattern, stats_line ):
           value = util.extract_val( stats_line )
@@ -170,7 +173,7 @@ def replaceValues():
     stats_pattern = pattern[ 1 ]
     print( "cpu checking stats: ", xml_pattern )
     cpuid = 0
-    with open(util.stats_file, "r") as f:
+    with open(stats_file, "r") as f:
       for stats_line in f.readlines():
         if re.search( stats_pattern, stats_line ):
           value = str( util.extract_val(stats_line) )
@@ -194,7 +197,7 @@ def replaceValues():
     stats_pattern = pattern[ 1 ]
     print( "tail checking stats: ", xml_pattern )
     cpuid = -1
-    with open(util.stats_file, "r") as f:
+    with open(stats_file, "r") as f:
       for stats_line in f.readlines():
         if re.search( stats_pattern, stats_line ):
           value = str( util.extract_val(stats_line) )
