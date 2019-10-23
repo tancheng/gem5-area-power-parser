@@ -17,7 +17,7 @@ Processor:
   Subthreshold Leakage = 2.06058 W
   Subthreshold Leakage with power gating = 0.797643 W
   Gate Leakage = 0.00469493 W
-  Runtime Dynamic = 0.216347 W
+  Runtime Dynamic = 0.219316 W
 
   Total Cores: 1 cores 
   Device Type= ITRS low operating power device type
@@ -26,7 +26,7 @@ Processor:
     Subthreshold Leakage = 0.369615 W
     Subthreshold Leakage with power gating = 0.271984 W
     Gate Leakage = 0.00146258 W
-    Runtime Dynamic = 0.0124845 W
+    Runtime Dynamic = 0.0154536 W
 
   Total First Level Directory: 
   Device Type= ITRS high performance device type
@@ -53,7 +53,7 @@ Core:
       Subthreshold Leakage = 0.369615 W
       Subthreshold Leakage with power gating = 0.271984 W
       Gate Leakage = 0.00146258 W
-      Runtime Dynamic = 0.0124845 W
+      Runtime Dynamic = 0.0154536 W
 
       Instruction Fetch Unit:
         Area = 0.363128 mm^2
@@ -61,7 +61,7 @@ Core:
         Subthreshold Leakage = 0.105048 W
         Subthreshold Leakage with power gating = 0.0785914 W
         Gate Leakage = 0.000396061 W
-        Runtime Dynamic = 0.00557512 W
+        Runtime Dynamic = 0.00866593 W
 
           Instruction Cache:
             Area = 0.334282 mm^2
@@ -69,7 +69,7 @@ Core:
             Subthreshold Leakage = 0.100918 W
             Subthreshold Leakage with power gating = 0.0754953 W
             Gate Leakage = 0.000385253 W
-            Runtime Dynamic = 8.785e-05 W
+            Runtime Dynamic = 0.00317867 W
 
           Branch Target Buffer:
             Area = 0.0233426 mm^2
@@ -206,7 +206,7 @@ Core:
         Subthreshold Leakage = 0.13201 W
         Subthreshold Leakage with power gating = 0.0978812 W
         Gate Leakage = 0.000516199 W
-        Runtime Dynamic = 0.000179438 W
+        Runtime Dynamic = 5.76676e-05 W
 
           Data Cache:
             Area = 0.410984 mm^2
@@ -214,7 +214,7 @@ Core:
             Subthreshold Leakage = 0.126337 W
             Subthreshold Leakage with power gating = 0.0937969 W
             Gate Leakage = 0.000491618 W
-            Runtime Dynamic = 0.00012177 W
+            Runtime Dynamic = 0 W
 
           LoadQ:
             Area = 0.011487 mm^2

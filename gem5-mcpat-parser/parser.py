@@ -67,21 +67,21 @@ def preProcess( lines ):
 def postProcess( lines ):
   for i in range(len(lines)):
     if re.search( "icache_read_accesses", lines[i] ):
-      lines[i].replace("icache_read_accesses", "read_accesses")
+      lines[i] = lines[i].replace("icache_read_accesses", "read_accesses")
     elif re.search( "icache_read_misses", lines[i] ):
-      lines[i].replace("icache_read_misses", "read_misses")
+      lines[i] = lines[i].replace("icache_read_misses", "read_misses")
     elif re.search( "icache_conflicts", lines[i] ):
-      lines[i].replace("icache_conflicts", "conflicts")
+      lines[i] = lines[i].replace("icache_conflicts", "conflicts")
     elif re.search( "dcache_read_accesses", lines[i] ):
-      lines[i].replace("dcache_read_accesses", "read_accesses")
+      lines[i] = lines[i].replace("dcache_read_accesses", "read_accesses")
     elif re.search( "dcache_read_misses", lines[i] ):
-      lines[i].replace("dcache_read_misses", "read_misses")
+      lines[i] = lines[i].replace("dcache_read_misses", "read_misses")
     elif re.search( "dcache_write_accesses", lines[i] ):
-      lines[i].replace("dcache_write_accesses", "write_accesses")
+      lines[i] = lines[i].replace("dcache_write_accesses", "write_accesses")
     elif re.search( "dcache_write_misses", lines[i] ):
-      lines[i].replace("dcache_write_misses", "write_misses")
+      lines[i] = lines[i].replace("dcache_write_misses", "write_misses")
     elif re.search( "dcache_conflicts", lines[i] ):
-      lines[i].replace("dcache_conflicts", "conflicts")
+      lines[i] = lines[i].replace("dcache_conflicts", "conflicts")
   return lines
 
 def getComponentLines(component):
