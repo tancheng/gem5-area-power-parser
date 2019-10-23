@@ -244,9 +244,9 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="icache_read_accesses" value="2"/>
-        <stat name="icache_read_misses" value="2"/>
-        <stat name="icache_conflicts" value="0"/>
+        <stat name="read_accesses" value="2"/>
+        <stat name="read_misses" value="2"/>
+        <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu0.dtlb" name="dtlb">
         <param name="number_entries" value="64"/>
@@ -260,11 +260,11 @@ omitted -->
         <param name="dcache_config" value="32768, 64, 2, 1, 1, 2, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="dcache_read_accesses" value="4000"/>
-        <stat name="dcache_write_accesses" value="0"/>
-        <stat name="dcache_read_misses" value="1"/>
-        <stat name="dcache_write_misses" value="0"/>
-        <stat name="dcache_conflicts" value="0"/>
+        <stat name="read_accesses" value="4000"/>
+        <stat name="write_accesses" value="0"/>
+        <stat name="read_misses" value="1"/>
+        <stat name="write_misses" value="0"/>
+        <stat name="conflicts" value="0"/>
       </component>
       <param name="number_of_BTB" value="2"/>
       <component id="system.cpu0.BTB" name="BTB">
