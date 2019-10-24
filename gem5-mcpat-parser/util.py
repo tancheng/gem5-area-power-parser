@@ -858,7 +858,6 @@ special_pattern_cpu_list = [
           ("load_instructions"              , load_instructions),
           ("store_instructions"             , store_instructions),
 
-
           # FIXME: wait for Tuan to generate the stats for decode and window
           ("rename_reads"                   , rename_reads),
           ("rename_writes"                  , rename_writes),
