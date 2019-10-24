@@ -11,7 +11,7 @@ import re
 #------------------------------------------------------------------------------
 
 config_file = "./input/config.ini"
-template_file = "./input/template.xml"
+template_file = "./input/template_embed_inorder_64.xml"
 
 #------------------------------------------------------------------------------
 # xml lines
@@ -484,24 +484,24 @@ def FPU_per_core( cpuid ):
 #      <!-- buffer between IF and ID stage -->
 #      <param name="instruction_buffer_size" value="32"/>
 def instruction_buffer_size( cpuid ):
-  return "1"
+  return "4"
 
 #      <!-- buffer between ID and sche/exe stage -->
 #      <param name="decoded_stream_buffer_size" value="16"/>
 def decoded_stream_buffer_size( cpuid ):
-  return "1"
+  return "4"
 
 #      <param name="instruction_window_scheme" value="0"/>
 #      <!-- 0 PHYREG based, 1 RSBASED-->
 #      <!-- McPAT support 2 types of OoO cores, RS based and physical reg based-->
 #      <param name="instruction_window_size" value="64"/>
 def instruction_window_size( cpuid ):
-  return "16"
+  return "4"
 
 #      <param name="fp_instruction_window_size" value="64"/>
 #      <!-- the instruction issue Q as in Alpha 21264; The RS as in Intel P6 -->
 def fp_instruction_window_size( cpuid ):
-  return "16"
+  return "4"
 
 #      <param name="ROB_size" value="128"/>
 #      <!-- each in-flight instruction has an entry in ROB -->
@@ -572,7 +572,7 @@ def int_instructions( cpuid ):
 
 
 def fp_instructions( cpuid ):
-  committed_fp_insts = stats_for_core[ cpuid ]["FloatCmp"] +\
+  committed_fp_insts = stats_for_core[ cpuid ][ "FloatCmp"] +\
                        stats_for_core[ cpuid ][ "FloatCvt" ] +\
                        stats_for_core[ cpuid ][ "FloatMult" ] +\
                        stats_for_core[ cpuid ][ "FloatMultAcc" ] +\
@@ -591,7 +591,7 @@ def committed_int_instructions( cpuid ):
   return str(committed_int_insts)
 
 def committed_fp_instructions( cpuid ):
-  committed_fp_insts = stats_for_core[ cpuid ]["FloatCmp"] +\
+  committed_fp_insts = stats_for_core[ cpuid ][ "FloatCmp"] +\
                        stats_for_core[ cpuid ][ "FloatCvt" ] +\
                        stats_for_core[ cpuid ][ "FloatMult" ] +\
                        stats_for_core[ cpuid ][ "FloatMultAcc" ] +\
@@ -603,7 +603,9 @@ def committed_fp_instructions( cpuid ):
 #      <stat name="pipeline_duty_cycle" value="1"/>
 #      <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
 def pipeline_duty_cycle( cpuid ):
-  return "1"
+  ipc = float( stats_for_core[ cpuid ][ "committed_instructions" ] ) /\
+        float( stats_for_core[ cpuid ][ "total_cycles" ] )
+  return str(ipc)
 
 #      <!-- the following cycle stats are used for heterogeneous cores only,
 #	   please ignore them if homogeneous cores -->
@@ -774,31 +776,31 @@ def rename_reads( cpuid ):
   return committed_int_instructions( cpuid )
 
 def rename_writes( cpuid ):
-  return committed_int_instructions( cpuid )
+  return "0"
 
 def fp_rename_reads( cpuid ):
   return committed_fp_instructions( cpuid )
 
 def fp_rename_writes( cpuid ):
-  return committed_fp_instructions( cpuid )
+  return "0"
 
 def inst_window_reads( cpuid ):
   return committed_int_instructions( cpuid )
 
 def inst_window_writes( cpuid ):
-  return committed_int_instructions( cpuid )
+  return "0"
 
 def inst_window_wakeup_accesses( cpuid ):
-  return committed_int_instructions( cpuid )
+  return "0"
 
 def fp_inst_window_reads( cpuid ):
   return committed_fp_instructions( cpuid )
 
 def fp_inst_window_writes( cpuid ):
-  return committed_fp_instructions( cpuid )
+  return "0"
 
 def fp_inst_window_wakeup_accesses( cpuid ):
-  return committed_fp_instructions( cpuid )
+  return "0"
 
 def load_instructions( cpuid ):
   return str(stats_for_core[ cpuid ][ "MemRead" ] +\

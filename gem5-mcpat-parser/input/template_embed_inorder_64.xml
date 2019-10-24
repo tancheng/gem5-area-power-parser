@@ -65,7 +65,7 @@ omitted -->
       <!-- Effective number of opcode bits -->
       <param name="x86" value="1"/>
       <param name="micro_opcode_width" value="8"/>
-      <param name="machine_type" value="0"/>
+      <param name="machine_type" value="1"/>
       <!-- inorder/OoO; 1 inorder; 0 OOO-->
       <param name="number_hardware_threads" value="2"/>
       <!-- number_instruction_fetch_ports(icache ports) is always 1 in single-thread processor,
@@ -77,13 +77,13 @@ omitted -->
       <param name="decode_width" value="4"/>
       <!-- decode_width determines the number of ports of the
 	   renaming table (both RAM and CAM) scheme -->
-      <param name="issue_width" value="4"/>
-      <param name="peak_issue_width" value="6"/>
+      <param name="issue_width" value="1"/>
+      <param name="peak_issue_width" value="1"/>
       <!-- issue_width determines the number of ports of Issue window and other logic
 	   as in the complexity effective processors paper; issue_width==dispatch_width -->
-      <param name="commit_width" value="4"/>
+      <param name="commit_width" value="1"/>
       <!-- commit_width determines the number of ports of register files -->
-      <param name="fp_issue_width" value="2"/>
+      <param name="fp_issue_width" value="1"/>
       <param name="prediction_width" value="1"/>
       <!-- number of branch instructions can be predicted simultaneously-->
       <!-- Current version of McPAT does not distinguish int and floating point pipelines
@@ -95,30 +95,30 @@ omitted -->
       <!-- issue and exe unit-->
       <param name="ALU_per_core" value="1"/>
       <!-- contains an adder, a shifter, and a logical unit -->
-      <param name="MUL_per_core" value="2"/>
+      <param name="MUL_per_core" value="1"/>
       <!-- For MUL and Div -->
       <param name="FPU_per_core" value="1"/>
       <!-- buffer between IF and ID stage -->
-      <param name="instruction_buffer_size" value="32"/>
+      <param name="instruction_buffer_size" value="4"/>
       <!-- buffer between ID and sche/exe stage -->
-      <param name="decoded_stream_buffer_size" value="16"/>
+      <param name="decoded_stream_buffer_size" value="4"/>
       <param name="instruction_window_scheme" value="0"/>
       <!-- 0 PHYREG based, 1 RSBASED-->
       <!-- McPAT support 2 types of OoO cores, RS based and physical reg based-->
-      <param name="instruction_window_size" value="64"/>
-      <param name="fp_instruction_window_size" value="64"/>
+      <param name="instruction_window_size" value="4"/>
+      <param name="fp_instruction_window_size" value="4"/>
       <!-- the instruction issue Q as in Alpha 21264; The RS as in Intel P6 -->
       <param name="ROB_size" value="128"/>
       <!-- each in-flight instruction has an entry in ROB -->
       <!-- registers -->
-      <param name="archi_Regs_IRF_size" value="32"/>
+      <param name="archi_Regs_IRF_size" value="16"/>
       <!-- X86-64 has 16GPR -->
-      <param name="archi_Regs_FRF_size" value="32"/>
+      <param name="archi_Regs_FRF_size" value="16"/>
       <!-- MMX + XMM -->
       <!--  if OoO processor, phy_reg number is needed for renaming logic,
 	   renaming logic is for both integer and floating point insts.  -->
-      <param name="phy_Regs_IRF_size" value="256"/>
-      <param name="phy_Regs_FRF_size" value="256"/>
+      <param name="phy_Regs_IRF_size" value="16"/>
+      <param name="phy_Regs_FRF_size" value="16"/>
       <!-- rename logic -->
       <param name="rename_scheme" value="0"/>
       <!-- can be RAM based(0) or CAM based(1) rename scheme

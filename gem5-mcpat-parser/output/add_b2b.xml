@@ -65,7 +65,7 @@ omitted -->
       <!-- Effective number of opcode bits -->
       <param name="x86" value="0"/>
       <param name="micro_opcode_width" value="8"/>
-      <param name="machine_type" value="0"/>
+      <param name="machine_type" value="1"/>
       <!-- inorder/OoO; 1 inorder; 0 OOO-->
       <param name="number_hardware_threads" value="1"/>
       <!-- number_instruction_fetch_ports(icache ports) is always 1 in single-thread processor,
@@ -83,7 +83,7 @@ omitted -->
 	   as in the complexity effective processors paper; issue_width==dispatch_width -->
       <param name="commit_width" value="1"/>
       <!-- commit_width determines the number of ports of register files -->
-      <param name="fp_issue_width" value="2"/>
+      <param name="fp_issue_width" value="1"/>
       <param name="prediction_width" value="1"/>
       <!-- number of branch instructions can be predicted simultaneously-->
       <!-- Current version of McPAT does not distinguish int and floating point pipelines
@@ -99,14 +99,14 @@ omitted -->
       <!-- For MUL and Div -->
       <param name="FPU_per_core" value="1"/>
       <!-- buffer between IF and ID stage -->
-      <param name="instruction_buffer_size" value="1"/>
+      <param name="instruction_buffer_size" value="4"/>
       <!-- buffer between ID and sche/exe stage -->
-      <param name="decoded_stream_buffer_size" value="16"/>
+      <param name="decoded_stream_buffer_size" value="4"/>
       <param name="instruction_window_scheme" value="0"/>
       <!-- 0 PHYREG based, 1 RSBASED-->
       <!-- McPAT support 2 types of OoO cores, RS based and physical reg based-->
-      <param name="instruction_window_size" value="16"/>
-      <param name="fp_instruction_window_size" value="16"/>
+      <param name="instruction_window_size" value="4"/>
+      <param name="fp_instruction_window_size" value="4"/>
       <!-- the instruction issue Q as in Alpha 21264; The RS as in Intel P6 -->
       <param name="ROB_size" value="16"/>
       <!-- each in-flight instruction has an entry in ROB -->
@@ -153,7 +153,7 @@ omitted -->
       <stat name="committed_instructions" value="3208"/>
       <stat name="committed_int_instructions" value="3115"/>
       <stat name="committed_fp_instructions" value="0"/>
-      <stat name="pipeline_duty_cycle" value="1"/>
+      <stat name="pipeline_duty_cycle" value="0.817116658176"/>
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only,
 	   please ignore them if homogeneous cores -->
@@ -169,15 +169,15 @@ omitted -->
       <!-- RAT accesses -->
       <stat name="rename_reads" value="3115"/>
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="3115"/>
+      <stat name="rename_writes" value="0"/>
       <!--update dest regs. renaming logic -->
       <stat name="fp_rename_reads" value="0"/>
       <stat name="fp_rename_writes" value="0"/>
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
       <stat name="inst_window_reads" value="3115"/>
-      <stat name="inst_window_writes" value="3115"/>
-      <stat name="inst_window_wakeup_accesses" value="3115"/>
+      <stat name="inst_window_writes" value="0"/>
+      <stat name="inst_window_wakeup_accesses" value="0"/>
       <stat name="fp_inst_window_reads" value="0"/>
       <stat name="fp_inst_window_writes" value="0"/>
       <stat name="fp_inst_window_wakeup_accesses" value="0"/>
