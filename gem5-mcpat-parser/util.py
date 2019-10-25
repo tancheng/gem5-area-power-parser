@@ -670,7 +670,7 @@ def getConfigInDomain( domain, item ):
       elif in_domain and "[system" in line and domain not in line:
         # return "NOT FOUND"
         assert( 0 )
-      if in_domain and (item+"=") in line:
+      if in_domain and item == line.split("=")[0]:
         config_str = extract_config(line)
         return config_str
 
@@ -683,15 +683,15 @@ def getConfigInDomain( domain, item ):
 #        <param name="buffer_sizes" value="16, 16, 16,0"/>
 #        <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
 def icache_capacity( cpuid ):
-  capacity = getConfigInDomain( "icache", "size" )
+  capacity = getConfigInDomain( "l1i_cntrl0.L1cache.replacement_policy]", "size" )
   return capacity
 
 def icache_block_width( cpuid ):
-  block_size = getConfigInDomain( "icache", "block_size" )
+  block_size = getConfigInDomain( "l1i_cntrl0.L1cache.replacement_policy]", "block_size" )
   return block_size
 
 def icache_associativity( cpuid ):
-  assoc = getConfigInDomain( "icache", "assoc" )
+  assoc = getConfigInDomain( "l1i_cntrl0.L1cache.replacement_policy]", "assoc" )
   return assoc
 
 def icache_bank( cpuid ):
@@ -701,8 +701,8 @@ def icache_throughtput( cpuid ):
   return "1"
 
 def icache_latency( cpuid ):
-  latency = getConfigInDomain( "icache", "data_latency" )
-  return latency
+#  latency = getConfigInDomain( "icache", "data_latency" )
+  return "1"
 
 def icache_output_width( cpuid ):
   return icache_block_width( cpuid )
@@ -727,15 +727,15 @@ def icache_config( cpuid ):
 #        <param name="buffer_sizes" value="16, 16, 16, 16"/>
 #        <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
 def dcache_capacity( cpuid ):
-  capacity = getConfigInDomain( "dcache", "size" )
+  capacity = getConfigInDomain( "l1d_cntrl0.L1cache.replacement_policy]", "size" )
   return capacity
 
 def dcache_block_width( cpuid ):
-  block_size = getConfigInDomain( "dcache", "block_size" )
+  block_size = getConfigInDomain( "l1d_cntrl0.L1cache.replacement_policy]", "block_size" )
   return block_size
 
 def dcache_associativity( cpuid ):
-  assoc = getConfigInDomain( "dcache", "assoc" )
+  assoc = getConfigInDomain( "l1d_cntrl0.L1cache.replacement_policy]", "assoc" )
   return assoc
 
 def dcache_bank( cpuid ):
@@ -745,8 +745,8 @@ def dcache_throughtput( cpuid ):
   return "1"
 
 def dcache_latency( cpuid ):
-  latency = getConfigInDomain( "dcache", "data_latency" )
-  return latency
+#  latency = getConfigInDomain( "dcache", "data_latency" )
+  return "1"
 
 def dcache_output_width( cpuid ):
   return dcache_block_width( cpuid )

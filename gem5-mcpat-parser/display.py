@@ -92,6 +92,9 @@ def main():
 
   print( "----- power ------" )
   for comp_power in power_list:
-    print( comp_power[1] )
+    if comp_power[1] == "0":
+      print( "0" )
+    else:
+      print( "%0.8f" % float(comp_power[1]) )
 
 main()
