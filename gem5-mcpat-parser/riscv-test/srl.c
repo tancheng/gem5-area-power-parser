@@ -32,6 +32,9 @@ int main()
                          "lui t4,0xcca30;"
                          "lui t5,0xfd95d;"
                          "lui t6,0x7c8e3;"
+                         "jal m1;"
+                         "m2: li a0, 0x9;"
+                         "li a1, 0x9;"
                        );
   __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x1;" 
                          "nop;"
@@ -40,7 +43,7 @@ int main()
                        );
   __asm__ __volatile__ ( 
                          // srl r1, r15, r16;
-                          "srl ra,a5,a6;"
+                          "m1: srl ra,a5,a6;"
                          // srl r2, r17, r18;
                           "srl sp,a7,s2;"
                          // srl r3, r19, r20;
@@ -58,9 +61,9 @@ int main()
                          // srl r9, r31, r32;
                           "srl s1,t6,t0;"
                          // srl r10, r1, r2;
-                          "srl a0,ra,sp;"
+                          "srl a2,ra,sp;"
                          // srl r11, r3, r4;
-                          "srl a1,gp,tp;"
+                          "srl a2,gp,tp;"
                          // srl r12, r5, r6;
                           "srl a2,t0,t1;"
                          // srl r13, r7, r8;
@@ -120,9 +123,9 @@ int main()
                          // srl r9, r31, r32;
                           "srl s1,t6,t0;"
                          // srl r10, r1, r2;
-                          "srl a0,ra,sp;"
+                          "srl a2,ra,sp;"
                          // srl r11, r3, r4;
-                          "srl a1,gp,tp;"
+                          "srl a2,gp,tp;"
                          // srl r12, r5, r6;
                           "srl a2,t0,t1;"
                          // srl r13, r7, r8;
@@ -182,9 +185,9 @@ int main()
                          // srl r9, r31, r32;
                           "srl s1,t6,t0;"
                          // srl r10, r1, r2;
-                          "srl a0,ra,sp;"
+                          "srl a2,ra,sp;"
                          // srl r11, r3, r4;
-                          "srl a1,gp,tp;"
+                          "srl a2,gp,tp;"
                          // srl r12, r5, r6;
                           "srl a2,t0,t1;"
                          // srl r13, r7, r8;
@@ -244,9 +247,9 @@ int main()
                          // srl r9, r31, r32;
                           "srl s1,t6,t0;"
                          // srl r10, r1, r2;
-                          "srl a0,ra,sp;"
+                          "srl a2,ra,sp;"
                          // srl r11, r3, r4;
-                          "srl a1,gp,tp;"
+                          "srl a2,gp,tp;"
                          // srl r12, r5, r6;
                           "srl a2,t0,t1;"
                          // srl r13, r7, r8;
@@ -306,9 +309,9 @@ int main()
                          // srl r9, r31, r32;
                           "srl s1,t6,t0;"
                          // srl r10, r1, r2;
-                          "srl a0,ra,sp;"
+                          "srl a2,ra,sp;"
                          // srl r11, r3, r4;
-                          "srl a1,gp,tp;"
+                          "srl a2,gp,tp;"
                          // srl r12, r5, r6;
                           "srl a2,t0,t1;"
                          // srl r13, r7, r8;
@@ -349,7 +352,9 @@ int main()
                           "srl t5,s1,a0;"
                          // srl r31, r11, r12;
                           "srl t6,a1,a2;"
+                          "beq a0, a1, ms;"
+                          "jal m2;"
                        );
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x0;"
+  __asm__ __volatile__ ( "ms: csrrwi s9,0x7c1, 0x0;"
                        );
 } 

@@ -47,9 +47,9 @@ omitted -->
     <param name="virtual_memory_page_size" value="4096"/>
     <!-- address width determines the tag_width in Cache, LSQ and buffers in cache controller
 	 default value is machine_bits, if not set -->
-    <stat name="total_cycles" value="673"/>
+    <stat name="total_cycles" value="172"/>
     <stat name="idle_cycles" value="0"/>
-    <stat name="busy_cycles" value="673"/>
+    <stat name="busy_cycles" value="172"/>
     <!--This page size(B) is complete different from the page size in Main memo section. this page size is the size of
 	virtual memory from OS/Archi perspective; the page size in Main memo section is the actual physical line in a DRAM bank  -->
     <!-- *********************** cores ******************* -->
@@ -143,23 +143,23 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="159"/>
+      <stat name="total_instructions" value="161"/>
       <stat name="int_instructions" value="159"/>
       <stat name="fp_instructions" value="0"/>
-      <stat name="branch_instructions" value="0"/>
+      <stat name="branch_instructions" value="2"/>
       <stat name="branch_mispredictions" value="0"/>
       <stat name="load_instructions" value="0"/>
       <stat name="store_instructions" value="0"/>
-      <stat name="committed_instructions" value="159"/>
+      <stat name="committed_instructions" value="161"/>
       <stat name="committed_int_instructions" value="159"/>
       <stat name="committed_fp_instructions" value="0"/>
-      <stat name="pipeline_duty_cycle" value="0.236255572065"/>
+      <stat name="pipeline_duty_cycle" value="0.936046511628"/>
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only,
 	   please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="673"/>
+      <stat name="total_cycles" value="172"/>
       <stat name="idle_cycles" value="0"/>
-      <stat name="busy_cycles" value="673"/>
+      <stat name="busy_cycles" value="172"/>
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
 	   performance simulator should capture the difference on accesses,
@@ -182,9 +182,9 @@ omitted -->
       <stat name="fp_inst_window_writes" value="0"/>
       <stat name="fp_inst_window_wakeup_accesses" value="0"/>
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="158"/>
+      <stat name="int_regfile_reads" value="160"/>
       <stat name="float_regfile_reads" value="0"/>
-      <stat name="int_regfile_writes" value="159"/>
+      <stat name="int_regfile_writes" value="160"/>
       <stat name="float_regfile_writes" value="0"/>
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="0"/>
@@ -192,7 +192,7 @@ omitted -->
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and
 	   multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="159"/>
+      <stat name="ialu_accesses" value="161"/>
       <stat name="fpu_accesses" value="0"/>
       <stat name="mul_accesses" value="0"/>
       <stat name="cdb_alu_accesses" value="0"/>
@@ -244,8 +244,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="5"/>
-        <stat name="read_misses" value="5"/>
+        <stat name="read_accesses" value="7"/>
+        <stat name="read_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu0.dtlb" name="dtlb">
@@ -264,7 +264,7 @@ omitted -->
         <stat name="write_accesses" value="0"/>
         <stat name="read_misses" value="0"/>
         <stat name="write_misses" value="0"/>
-        <stat name="conflicts" value="5"/>
+        <stat name="conflicts" value="0"/>
       </component>
       <param name="number_of_BTB" value="2"/>
       <component id="system.cpu0.BTB" name="BTB">

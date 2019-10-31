@@ -32,15 +32,18 @@ int main()
                          "lui t4,0xcca30;"
                          "lui t5,0xfd95d;"
                          "lui t6,0x7c8e3;"
+                         "jal m1;"
                        );
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x1;" 
+  __asm__ __volatile__ ( "m2: li a0, 0x9;"
+                         "li a1, 0x9;"
+                         "csrrwi s9,0x7c1, 0x1;" 
                          "nop;"
                          "nop;"
                          "nop;"
                        );
   __asm__ __volatile__ ( 
                          // and r1, r15, r16;
-                          "and ra,a5,a6;"
+                          "m1: and ra,a5,a6;"
                          // and r2, r17, r18;
                           "and sp,a7,s2;"
                          // and r3, r19, r20;
@@ -58,15 +61,15 @@ int main()
                          // and r9, r31, r32;
                           "and s1,t6,t0;"
                          // and r10, r1, r2;
-                          "and a0,ra,sp;"
+                          "and a2,ra,sp;"
                          // and r11, r3, r4;
-                          "and a1,gp,tp;"
+                          "and a2,gp,tp;"
                          // and r12, r5, r6;
                           "and a2,t0,t1;"
                          // and r13, r7, r8;
                           "and a3,t2,s0;"
                          // and r14, r9, r10;
-                          "and a4,s1,a0;"
+                          "and a4,s1,a2;"
                          // and r15, r11, r12;
                           "and a5,a1,a2;"
                          // and r16, r13, r14;
@@ -98,7 +101,7 @@ int main()
                          // and r29, r7, r8;
                           "and t4,t2,s0;"
                          // and r30, r9, r10;
-                          "and t5,s1,a0;"
+                          "and t5,s1,a2;"
                          // and r31, r11, r12;
                           "and t6,a1,a2;"
                          // and r1, r15, r16;
@@ -120,15 +123,15 @@ int main()
                          // and r9, r31, r32;
                           "and s1,t6,t0;"
                          // and r10, r1, r2;
-                          "and a0,ra,sp;"
+                          "and a2,ra,sp;"
                          // and r11, r3, r4;
-                          "and a1,gp,tp;"
+                          "and a2,gp,tp;"
                          // and r12, r5, r6;
                           "and a2,t0,t1;"
                          // and r13, r7, r8;
                           "and a3,t2,s0;"
                          // and r14, r9, r10;
-                          "and a4,s1,a0;"
+                          "and a4,s1,a2;"
                          // and r15, r11, r12;
                           "and a5,a1,a2;"
                          // and r16, r13, r14;
@@ -160,7 +163,7 @@ int main()
                          // and r29, r7, r8;
                           "and t4,t2,s0;"
                          // and r30, r9, r10;
-                          "and t5,s1,a0;"
+                          "and t5,s1,a2;"
                          // and r31, r11, r12;
                           "and t6,a1,a2;"
                          // and r1, r15, r16;
@@ -182,15 +185,15 @@ int main()
                          // and r9, r31, r32;
                           "and s1,t6,t0;"
                          // and r10, r1, r2;
-                          "and a0,ra,sp;"
+                          "and a2,ra,sp;"
                          // and r11, r3, r4;
-                          "and a1,gp,tp;"
+                          "and a2,gp,tp;"
                          // and r12, r5, r6;
                           "and a2,t0,t1;"
                          // and r13, r7, r8;
                           "and a3,t2,s0;"
                          // and r14, r9, r10;
-                          "and a4,s1,a0;"
+                          "and a4,s1,a2;"
                          // and r15, r11, r12;
                           "and a5,a1,a2;"
                          // and r16, r13, r14;
@@ -222,7 +225,7 @@ int main()
                          // and r29, r7, r8;
                           "and t4,t2,s0;"
                          // and r30, r9, r10;
-                          "and t5,s1,a0;"
+                          "and t5,s1,a2;"
                          // and r31, r11, r12;
                           "and t6,a1,a2;"
                          // and r1, r15, r16;
@@ -244,15 +247,15 @@ int main()
                          // and r9, r31, r32;
                           "and s1,t6,t0;"
                          // and r10, r1, r2;
-                          "and a0,ra,sp;"
+                          "and a2,ra,sp;"
                          // and r11, r3, r4;
-                          "and a1,gp,tp;"
+                          "and a2,gp,tp;"
                          // and r12, r5, r6;
                           "and a2,t0,t1;"
                          // and r13, r7, r8;
                           "and a3,t2,s0;"
                          // and r14, r9, r10;
-                          "and a4,s1,a0;"
+                          "and a4,s1,a2;"
                          // and r15, r11, r12;
                           "and a5,a1,a2;"
                          // and r16, r13, r14;
@@ -284,7 +287,7 @@ int main()
                          // and r29, r7, r8;
                           "and t4,t2,s0;"
                          // and r30, r9, r10;
-                          "and t5,s1,a0;"
+                          "and t5,s1,a2;"
                          // and r31, r11, r12;
                           "and t6,a1,a2;"
                          // and r1, r15, r16;
@@ -306,15 +309,15 @@ int main()
                          // and r9, r31, r32;
                           "and s1,t6,t0;"
                          // and r10, r1, r2;
-                          "and a0,ra,sp;"
+                          "and a2,ra,sp;"
                          // and r11, r3, r4;
-                          "and a1,gp,tp;"
+                          "and a2,gp,tp;"
                          // and r12, r5, r6;
                           "and a2,t0,t1;"
                          // and r13, r7, r8;
                           "and a3,t2,s0;"
                          // and r14, r9, r10;
-                          "and a4,s1,a0;"
+                          "and a4,s1,a2;"
                          // and r15, r11, r12;
                           "and a5,a1,a2;"
                          // and r16, r13, r14;
@@ -346,10 +349,12 @@ int main()
                          // and r29, r7, r8;
                           "and t4,t2,s0;"
                          // and r30, r9, r10;
-                          "and t5,s1,a0;"
+                          "and t5,s1,a2;"
                          // and r31, r11, r12;
                           "and t6,a1,a2;"
+                          "beq a0, a1, ms;"
+                          "jal m2;"
                        );
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x0;"
+  __asm__ __volatile__ ( "ms: csrrwi s9,0x7c1, 0x0;"
                        );
 } 

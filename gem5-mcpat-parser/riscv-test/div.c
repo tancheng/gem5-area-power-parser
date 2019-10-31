@@ -32,15 +32,18 @@ int main()
                          "lui t4,0xcca30;"
                          "lui t5,0xfd95d;"
                          "lui t6,0x7c8e3;"
+                         "jal m1;"
                        );
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x1;" 
+  __asm__ __volatile__ ( "m2: li a0, 0x9;"
+                         "li a1, 0x9;"
+                         "csrrwi s9,0x7c1, 0x1;" 
                          "nop;"
                          "nop;"
                          "nop;"
                        );
   __asm__ __volatile__ ( 
                          // div r1, r15, r16;
-                          "div ra,a5,a6;"
+                          "m1: div ra,a5,a6;"
                          // div r2, r17, r18;
                           "div sp,a7,s2;"
                          // div r3, r19, r20;
@@ -58,9 +61,9 @@ int main()
                          // div r9, r31, r32;
                           "div s1,t6,t0;"
                          // div r10, r1, r2;
-                          "div a0,ra,sp;"
+                          "div a2,ra,sp;"
                          // div r11, r3, r4;
-                          "div a1,gp,tp;"
+                          "div a2,gp,tp;"
                          // div r12, r5, r6;
                           "div a2,t0,t1;"
                          // div r13, r7, r8;
@@ -120,9 +123,9 @@ int main()
                          // div r9, r31, r32;
                           "div s1,t6,t0;"
                          // div r10, r1, r2;
-                          "div a0,ra,sp;"
+                          "div a2,ra,sp;"
                          // div r11, r3, r4;
-                          "div a1,gp,tp;"
+                          "div a2,gp,tp;"
                          // div r12, r5, r6;
                           "div a2,t0,t1;"
                          // div r13, r7, r8;
@@ -182,9 +185,9 @@ int main()
                          // div r9, r31, r32;
                           "div s1,t6,t0;"
                          // div r10, r1, r2;
-                          "div a0,ra,sp;"
+                          "div a2,ra,sp;"
                          // div r11, r3, r4;
-                          "div a1,gp,tp;"
+                          "div a2,gp,tp;"
                          // div r12, r5, r6;
                           "div a2,t0,t1;"
                          // div r13, r7, r8;
@@ -244,9 +247,9 @@ int main()
                          // div r9, r31, r32;
                           "div s1,t6,t0;"
                          // div r10, r1, r2;
-                          "div a0,ra,sp;"
+                          "div a2,ra,sp;"
                          // div r11, r3, r4;
-                          "div a1,gp,tp;"
+                          "div a2,gp,tp;"
                          // div r12, r5, r6;
                           "div a2,t0,t1;"
                          // div r13, r7, r8;
@@ -306,9 +309,9 @@ int main()
                          // div r9, r31, r32;
                           "div s1,t6,t0;"
                          // div r10, r1, r2;
-                          "div a0,ra,sp;"
+                          "div a2,ra,sp;"
                          // div r11, r3, r4;
-                          "div a1,gp,tp;"
+                          "div a2,gp,tp;"
                          // div r12, r5, r6;
                           "div a2,t0,t1;"
                          // div r13, r7, r8;
@@ -349,7 +352,9 @@ int main()
                           "div t5,s1,a0;"
                          // div r31, r11, r12;
                           "div t6,a1,a2;"
+                          "beq a0, a1, ms;"
+                          "jal m2;"
                        );
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x0;"
+  __asm__ __volatile__ ( "ms: csrrwi s9,0x7c1, 0x0;"
                        );
 } 

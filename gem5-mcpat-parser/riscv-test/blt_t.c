@@ -32,9 +32,12 @@ int main()
                          "li t4,0xb4c3c;"
                          "li t5,0xb4c3d;"
                          "li t6,0xb4c3e;"
+                         "jal m1;"
            
                        );
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x1;" 
+  __asm__ __volatile__ ( "m0: li a0, 0x9;"
+                         "li a1, 0x9;"
+                         "csrrwi s9,0x7c1, 0x1;" 
                          "nop;"
                          "nop;"
                          "nop;"
@@ -67,9 +70,9 @@ int main()
                          // blt r13, r7, r8;
                           "m13: blt t2,s0, m112;"
                          // blt r14, r9, r10;
-                          "m14: blt s1,a0, m111;"
+                          "m14: blt s1,a2, m111;"
                          // blt r15, r11, r12;
-                          "m15: blt a1,a2, m110;"
+                          "m15: blt a2,a3, m110;"
                          // blt r16, r13, r14;
                           "m16: blt a3,a4, m109;"
                          // blt r17, r15, r16;
@@ -99,9 +102,9 @@ int main()
                          // blt r29, r7, r8;
                           "m29: blt t2,s0, m96;"
                          // blt r30, r9, r10;
-                          "m30: blt s1,a0, m95;"
+                          "m30: blt s1,a2, m95;"
                          // blt r31, r11, r12;
-                          "m31: blt a1,a2, m94;"
+                          "m31: blt s1,a2, m94;"
                          // blt r1, r15, r16;
                           "m32: blt a5,a6, m93;"
                          // blt r2, r17, r18;
@@ -129,9 +132,9 @@ int main()
                          // blt r13, r7, r8;
                           "m44: blt t2,s0, m81;"
                          // blt r14, r9, r10;
-                          "m45: blt s1,a0, m80;"
+                          "m45: blt s1,a2, m80;"
                          // blt r15, r11, r12;
-                          "m46: blt a1,a2, m79;"
+                          "m46: blt s1,a2, m79;"
                          // blt r16, r13, r14;
                           "m47: blt a3,a4, m78;"
                          // blt r17, r15, r16;
@@ -161,11 +164,13 @@ int main()
                          // blt r29, r7, r8;
                           "m60: blt t2,s0, m65;"
                          // blt r30, r9, r10;
-                          "m61: blt s1,a0, m64;"
+                          "m61: blt s1,a2, m64;"
                          // blt r31, r11, r12;
-                          "m62: blt a1,a2, m63;"
+                          "m62: blt s1,a2, m63;"
                          // blt r1, r15, r16;
-                          "m63: blt a5,a6, ms;"
+//                          "m63: blt a5,a6, ms;"
+                          "m63: beq a0, a1, ms;"
+                          "jal m0;"
                          // blt r2, r17, r18;
                           "m64: blt a7,s2, m62;"
                          // blt r3, r19, r20;
@@ -191,9 +196,9 @@ int main()
                          // blt r13, r7, r8;
                           "m75: blt t2,s0, m51;"
                          // blt r14, r9, r10;
-                          "m76: blt s1,a0, m50;"
+                          "m76: blt s1,a2, m50;"
                          // blt r15, r11, r12;
-                          "m77: blt a1,a2, m49;"
+                          "m77: blt s1,a2, m49;"
                          // blt r16, r13, r14;
                           "m78: blt a3,a4, m48;"
                          // blt r17, r15, r16;
@@ -223,9 +228,9 @@ int main()
                          // blt r29, r7, r8;
                           "m91: blt t2,s0, m35;"
                          // blt r30, r9, r10;
-                          "m92: blt s1,a0, m34;"
+                          "m92: blt s1,a2, m34;"
                          // blt r31, r11, r12;
-                          "m93: blt a1,a2, m33;"
+                          "m93: blt s1,a2, m33;"
                          // blt r1, r15, r16;
                           "m94: blt a5,a6, m32;"
                          // blt r2, r17, r18;
@@ -253,9 +258,9 @@ int main()
                          // blt r13, r7, r8;
                           "m106: blt t2,s0, m20;"
                          // blt r14, r9, r10;
-                          "m107: blt s1,a0, m19;"
+                          "m107: blt s1,a2, m19;"
                          // blt r15, r11, r12;
-                          "m108: blt a1,a2, m18;"
+                          "m108: blt s1,a2, m18;"
                          // blt r16, r13, r14;
                           "m109: blt a3,a4, m17;"
                          // blt r17, r15, r16;
@@ -285,9 +290,9 @@ int main()
                          // blt r29, r7, r8;
                           "m122: blt t2,s0, m4;"
                          // blt r30, r9, r10;
-                          "m123: blt s1,a0, m3;"
+                          "m123: blt s1,a2, m3;"
                          // blt r31, r11, r12;
-                          "m124: blt a1,a2, m2;"
+                          "m124: blt s1,a2, m2;"
                       );
   __asm__ __volatile__ ( "ms: csrrwi s9,0x7c1, 0x0;"
                        );

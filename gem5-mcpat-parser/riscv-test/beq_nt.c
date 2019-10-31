@@ -32,15 +32,17 @@ int main()
                          "li t4,0xb54;"
                          "li t5,0xbb8;"
                          "li t6,0xc1c;"
+                         "jal m1;"
                        );
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x1;" 
+  __asm__ __volatile__ ( "m2: li t6, 0xbb8;"
+                         "csrrwi s9,0x7c1, 0x1;" 
                          "nop;"
                          "nop;"
                          "nop;"
                        );
   __asm__ __volatile__ ( 
                          // beq r1, r15, r16;
-                          "beq a5,a6, ms;"
+                          "m1: beq a5,a6, ms;"
                          // beq r2, r17, r18;
                           "beq a7,s2, ms;"
                          // beq r3, r19, r20;
@@ -348,7 +350,8 @@ int main()
                          // beq r30, r9, r10;
                           "beq s1,a0, ms;"
                          // beq r31, r11, r12;
-                          "beq a1,a2, ms;"
+                          "beq t5, t6, ms;"
+                          "jal m2;"
  "ms: "
                       );
   __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x0;"

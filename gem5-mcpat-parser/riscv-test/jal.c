@@ -1,6 +1,10 @@
 int main() 
 { 
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x1;" 
+  __asm__ __volatile__ ( "li a0, 0x7;"
+                         "jal m1;"
+                         "mb: li a0, 0x9;"
+                         "li a1, 0x9;"
+                         "csrrwi s9,0x7c1, 0x1;" 
                          "nop;"
                          "nop;"
                          "nop;"
@@ -68,7 +72,9 @@ int main()
                          "m60: jal  m65;"
                          "m61: jal  m64;"
                          "m62: jal m63;"
-                         "m63: jal ms;"
+//                         "m63: jal ms;"
+                         "m63: beq a0, a1, ms;"
+                         "jal  mb;"
                          "m64: jal m62;"
                          "m65: jal m61;"
                          "m66: jal m60;"

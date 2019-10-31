@@ -32,6 +32,9 @@ int main()
                          "lui t4,0xcca30;"
                          "lui t5,0xfd95d;"
                          "lui t6,0x7c8e3;"
+                         "jal m1;"
+                         "m2: li a0, 0x9;"
+                         "li a1, 0x9;"
                        );
   __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x1;" 
                          "nop;"
@@ -40,7 +43,7 @@ int main()
                        );
   __asm__ __volatile__ ( 
                          // sub r1, r15, r16;
-                          "sub ra,a5,a6;"
+                          "m1: sub ra,a5,a6;"
                          // sub r2, r17, r18;
                           "sub sp,a7,s2;"
                          // sub r3, r19, r20;
@@ -58,9 +61,9 @@ int main()
                          // sub r9, r31, r32;
                           "sub s1,t6,t0;"
                          // sub r10, r1, r2;
-                          "sub a0,ra,sp;"
+                          "sub a2,ra,sp;"
                          // sub r11, r3, r4;
-                          "sub a1,gp,tp;"
+                          "sub a2,gp,tp;"
                          // sub r12, r5, r6;
                           "sub a2,t0,t1;"
                          // sub r13, r7, r8;
@@ -120,9 +123,9 @@ int main()
                          // sub r9, r31, r32;
                           "sub s1,t6,t0;"
                          // sub r10, r1, r2;
-                          "sub a0,ra,sp;"
+                          "sub a2,ra,sp;"
                          // sub r11, r3, r4;
-                          "sub a1,gp,tp;"
+                          "sub a2,gp,tp;"
                          // sub r12, r5, r6;
                           "sub a2,t0,t1;"
                          // sub r13, r7, r8;
@@ -182,9 +185,9 @@ int main()
                          // sub r9, r31, r32;
                           "sub s1,t6,t0;"
                          // sub r10, r1, r2;
-                          "sub a0,ra,sp;"
+                          "sub a2,ra,sp;"
                          // sub r11, r3, r4;
-                          "sub a1,gp,tp;"
+                          "sub a2,gp,tp;"
                          // sub r12, r5, r6;
                           "sub a2,t0,t1;"
                          // sub r13, r7, r8;
@@ -244,9 +247,9 @@ int main()
                          // sub r9, r31, r32;
                           "sub s1,t6,t0;"
                          // sub r10, r1, r2;
-                          "sub a0,ra,sp;"
+                          "sub a2,ra,sp;"
                          // sub r11, r3, r4;
-                          "sub a1,gp,tp;"
+                          "sub a2,gp,tp;"
                          // sub r12, r5, r6;
                           "sub a2,t0,t1;"
                          // sub r13, r7, r8;
@@ -306,9 +309,9 @@ int main()
                          // sub r9, r31, r32;
                           "sub s1,t6,t0;"
                          // sub r10, r1, r2;
-                          "sub a0,ra,sp;"
+                          "sub a2,ra,sp;"
                          // sub r11, r3, r4;
-                          "sub a1,gp,tp;"
+                          "sub a2,gp,tp;"
                          // sub r12, r5, r6;
                           "sub a2,t0,t1;"
                          // sub r13, r7, r8;
@@ -349,7 +352,9 @@ int main()
                           "sub t5,s1,a0;"
                          // sub r31, r11, r12;
                           "sub t6,a1,a2;"
+                          "beq a0, a1, ms;"
+                          "jal m2;"
                        );
-  __asm__ __volatile__ ( "csrrwi s9,0x7c1, 0x0;"
+  __asm__ __volatile__ ( "ms: csrrwi s9,0x7c1, 0x0;"
                        );
 } 
