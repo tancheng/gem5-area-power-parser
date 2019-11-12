@@ -10,7 +10,7 @@ import re
 # input/output files
 #------------------------------------------------------------------------------
 
-config_file = "./input/config.ini"
+config_file = "./input/tuan_config.ini"
 template_file = "./input/template_embed_inorder_64.xml"
 
 #------------------------------------------------------------------------------
@@ -566,8 +566,7 @@ def int_instructions( cpuid ):
   committed_int_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
                         stats_for_core[ cpuid ][ "IntMult" ] +\
                         stats_for_core[ cpuid ][ "IntDiv" ] +\
-                        stats_for_core[ cpuid ][ "No_OpClass" ] -\
-                        stats_for_core[ cpuid ][ "branch_instructions" ]
+                        stats_for_core[ cpuid ][ "No_OpClass" ]
   return str(committed_int_insts)
 
 
@@ -586,8 +585,7 @@ def committed_int_instructions( cpuid ):
   committed_int_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
                         stats_for_core[ cpuid ][ "IntMult" ] +\
                         stats_for_core[ cpuid ][ "IntDiv" ] +\
-                        stats_for_core[ cpuid ][ "No_OpClass" ] -\
-                        stats_for_core[ cpuid ][ "branch_instructions" ]
+                        stats_for_core[ cpuid ][ "No_OpClass" ]
   return str(committed_int_insts)
 
 def committed_fp_instructions( cpuid ):
