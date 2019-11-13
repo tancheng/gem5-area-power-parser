@@ -45,9 +45,9 @@ def writeFiles(lines, mode):
 def preProcessStats():
   print ("see stats_lines len: ", len(stats_lines))
   for i in range(len(stats_lines)):
-    if "system.cooldown_cpu." in stats_lines[i]:
+    if "system.cooldown_cpu" in stats_lines[i]:
       stats_lines[i] = ""
-    elif "system.cpu." in stats_lines[i]:
+    elif "system.cpu" in stats_lines[i]:
       stats_lines[i] = ""
 
 def preProcessXML( lines ):

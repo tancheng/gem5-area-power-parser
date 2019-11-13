@@ -38,7 +38,7 @@ pattern_cpu_list = [
                 ("branch_mispredictions"     , re.compile(r'branchPredindirectMispredicted')),
 #                ("load_instructions"         , re.compile(r'load_instructions')),
 #                ("store_instructions"        , re.compile(r'store_instructions')),
-                ("committed_instructions"    , re.compile(r'num_committed_insts')),
+                ("committed_instructions"    , re.compile(r'num_committed_insts|committedInsts')),
                 ("IntAlu"                    , re.compile(r'IntAlu')),
                 ("IntMult"                   , re.compile(r'IntMult')),
                 ("IntDiv"                    , re.compile(r'IntDiv')),
