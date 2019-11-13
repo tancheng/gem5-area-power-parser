@@ -19,7 +19,6 @@ import sys
 output_dir = "./output"
 stats_file = sys.argv[1]
 out_file = sys.argv[2]
-stats_lines = []
 
 def readFiles():
   if not os.path.isfile( stats_file ):
@@ -28,12 +27,17 @@ def readFiles():
   with open(stats_file, "r") as f:
     lines = f.readlines()
     for line in lines:
-      stats_lines.append(line)
+      util.stats_lines.append(line)
     preProcessStats()
 
   if not os.path.isfile( util.config_file ):
     print("No config.ini")
     exit(0)
+  with open(util.config_file, "r") as f:
+    lines = f.readlines()
+    for line in lines:
+      util.config_lines.append(line)
+    preProcessConfig()
 
 def writeFiles(lines, mode):
 #  if not os.path.exists(output_dir):
@@ -42,13 +46,24 @@ def writeFiles(lines, mode):
     for line in lines:
       f.write(line)
 
+def preProcessConfig():
+  for i in range(len(util.config_lines)):
+    if "sc3_cntrl" in util.config_lines[i]:
+      old_num = re.findall( r'[0-9]+', util.config_lines[i] )[1]
+      new_num = str(int(old_num) + 4)
+      util.config_lines[i] = re.sub(r'sc3_cntrl[0-9]+', "l1_cntrl"+new_num, util.config_lines[i])
+
 def preProcessStats():
-  print ("see stats_lines len: ", len(stats_lines))
-  for i in range(len(stats_lines)):
-    if "system.cooldown_cpu" in stats_lines[i]:
-      stats_lines[i] = ""
-    elif "system.cpu" in stats_lines[i]:
-      stats_lines[i] = ""
+  print ("see util.stats_lines len: ", len(util.stats_lines))
+  for i in range(len(util.stats_lines)):
+    if "system.cooldown_cpu" in util.stats_lines[i]:
+      util.stats_lines[i] = ""
+    elif "system.cpu" in util.stats_lines[i]:
+      util.stats_lines[i] = ""
+    if "sc3_cntrl" in util.stats_lines[i]:
+      old_num = re.findall( r'[0-9]+', util.stats_lines[i] )[1]
+      new_num = str(int(old_num) + 4)
+      util.stats_lines[i] = re.sub(r'sc3_cntrl[0-9]+', "l1_cntrl"+new_num, util.stats_lines[i])
 
 def preProcessXML( lines ):
   component_name = ""
@@ -125,14 +140,13 @@ def getCoreCount():
   if util.core_count != -1:
     return util.core_count
   util.core_count = 1
-  cpu_pattern = re.compile(r'cpu\d+')
-  with open(util.config_file, "r") as f:
-    for line in f.readlines():
-      cpus = re.findall( cpu_pattern, line )
-      if len(cpus) != 0:
-        count = re.findall(r'[0-9]+', cpus[-1])
-        util.core_count = int(count[-1]) + 1
-        break
+  cpu_pattern = re.compile(r'main_cpu\d+')
+  for line in util.config_lines:
+    cpus = re.findall( cpu_pattern, line )
+    if len(cpus) != 0:
+      count = re.findall(r'[0-9]+', cpus[-1])
+      util.core_count = int(count[-1]) + 1
+      break
   for _ in range(util.core_count):
     util.stats_for_core.append({})
   return util.core_count
@@ -143,6 +157,7 @@ util.xml_core = []
 
 def constructLines():
   util.core_count = getCoreCount()
+  print( "see core count: ", util.core_count )
   with open(util.template_file, "r") as f:
     skip_line_count = 0
     component_lines = getComponentLines("system.cpu0")
@@ -150,9 +165,14 @@ def constructLines():
     for line in f.readlines():
       if 'id=\"system.cpu0\"' in line:
         skip_line_count += 1
-        print( "core_count: ", util.core_count )
-        for _ in range(util.core_count):
-          util.xml_core.append(component_lines)
+        for cpuid in range(util.core_count):
+          new_component_lines = []
+          for line_index in range(len(component_lines)):
+            new_line = component_lines[line_index]
+            new_line = re.sub(r'cpu0', "cpu"+str(cpuid), new_line)
+            new_line = re.sub(r'core0', "core"+str(cpuid), new_line)
+            new_component_lines.append( new_line )
+          util.xml_core.append(new_component_lines)
       elif skip_line_count > 0 and skip_line_count < core_line_count:
         skip_line_count += 1
       elif skip_line_count == 0:
@@ -166,7 +186,7 @@ def replaceValues():
     stats_pattern = pattern[ 1 ]
     print( "head checking stats: ", xml_pattern )
     cpuid = -1
-    for stats_line in stats_lines:
+    for stats_line in util.stats_lines:
       if re.search( stats_pattern, stats_line ):
         value = util.extract_val( stats_line )
         for line_index in range(len(util.xml_head)):
@@ -182,7 +202,7 @@ def replaceValues():
     stats_pattern = pattern[ 1 ]
     print( "cpu checking stats: ", xml_pattern )
     cpuid = 0
-    for stats_line in stats_lines:
+    for stats_line in util.stats_lines:
       if re.search( stats_pattern, stats_line ):
         value = str( util.extract_val(stats_line) )
         cpuid_pattern = re.findall( r'system.\S+cpu[0-9]+.', stats_line )
@@ -198,14 +218,14 @@ def replaceValues():
             print( "replace item in cpu[", cpuid, "]: ", xml_pattern, util.xml_core[cpuid][line_index], value )
             print( util.stats_for_core )
             break
-        break
+#        break
 
   for pattern in util.pattern_tail_list:
     xml_pattern   = pattern[ 0 ]
     stats_pattern = pattern[ 1 ]
     print( "tail checking stats: ", xml_pattern )
     cpuid = -1
-    for stats_line in stats_lines:
+    for stats_line in util.stats_lines:
       if re.search( stats_pattern, stats_line ):
         value = str( util.extract_val(stats_line) )
         for line_index in range(len(util.xml_tail)):

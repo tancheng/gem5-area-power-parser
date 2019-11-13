@@ -10,7 +10,8 @@ import re
 # input/output files
 #------------------------------------------------------------------------------
 
-config_file = "./input/tuan_config.ini"
+#config_file = "./input/tuan_config.ini"
+config_file = "./input/moyang_config.ini"
 template_file = "./input/template_embed_inorder_64.xml"
 
 #------------------------------------------------------------------------------
@@ -107,6 +108,8 @@ def extract_config( line ):
 
 core_count = -1
 stats_for_core = []
+config_lines = []
+stats_lines = []
 
 #------------------------------------------------------------------------------
 # private variables
@@ -431,6 +434,12 @@ def system_busy_cycles():
 def x86( cpuid ):
   return "0"
 
+def machine_type( cpuid ):
+  if cpuid < 4:
+    return "0"
+  else:
+    return "1"
+
 def number_hardware_threads( cpuid ):
   return "1"
 
@@ -660,17 +669,16 @@ def mul_accesses( cpuid ):
              stats_for_core[ cpuid ]["IntDiv"])
 
 def getConfigInDomain( domain, item ):
-  with open(config_file, "r") as f:
-    in_domain = False
-    for line in f.readlines():
-      if "[system" in line and domain in line:
-        in_domain = True
-      elif in_domain and "[system" in line and domain not in line:
-        # return "NOT FOUND"
-        assert( 0 )
-      if in_domain and item == line.split("=")[0]:
-        config_str = extract_config(line)
-        return config_str
+  in_domain = False
+  for line in config_lines:
+    if "[system" in line and domain in line:
+      in_domain = True
+    elif in_domain and "[system" in line and domain not in line:
+      # return "NOT FOUND"
+      assert( 0 )
+    if in_domain and item == line.split("=")[0]:
+      config_str = extract_config(line)
+      return config_str
 
 #      <component id="system.cpu0.icache" name="icache">
 #        <!-- there is no write requests to itlb although writes happen to it after miss,
@@ -681,15 +689,15 @@ def getConfigInDomain( domain, item ):
 #        <param name="buffer_sizes" value="16, 16, 16,0"/>
 #        <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
 def icache_capacity( cpuid ):
-  capacity = getConfigInDomain( "l1i_cntrl0.L1cache.replacement_policy]", "size" )
+  capacity = getConfigInDomain( "l1_cntrl"+str(cpuid)+".L1Icache.replacement_policy]", "size" )
   return capacity
 
 def icache_block_width( cpuid ):
-  block_size = getConfigInDomain( "l1i_cntrl0.L1cache.replacement_policy]", "block_size" )
+  block_size = getConfigInDomain( "l1_cntrl"+str(cpuid)+".L1Icache.replacement_policy]", "block_size" )
   return block_size
 
 def icache_associativity( cpuid ):
-  assoc = getConfigInDomain( "l1i_cntrl0.L1cache.replacement_policy]", "assoc" )
+  assoc = getConfigInDomain( "l1_cntrl"+str(cpuid)+".L1Icache.replacement_policy]", "assoc" )
   return assoc
 
 def icache_bank( cpuid ):
@@ -709,6 +717,7 @@ def icache_cache_policy( cpuid ):
   return "1"
 
 def icache_config( cpuid ):
+  print("now serving for cpu: ", cpuid)
   config = icache_capacity( cpuid ) + ", " +\
            icache_block_width( cpuid ) + ", " +\
            icache_associativity( cpuid ) + ", " +\
@@ -725,15 +734,15 @@ def icache_config( cpuid ):
 #        <param name="buffer_sizes" value="16, 16, 16, 16"/>
 #        <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
 def dcache_capacity( cpuid ):
-  capacity = getConfigInDomain( "l1d_cntrl0.L1cache.replacement_policy]", "size" )
+  capacity = getConfigInDomain( "l1_cntrl"+str(cpuid)+".L1Dcache.replacement_policy]", "size" )
   return capacity
 
 def dcache_block_width( cpuid ):
-  block_size = getConfigInDomain( "l1d_cntrl0.L1cache.replacement_policy]", "block_size" )
+  block_size = getConfigInDomain( "l1_cntrl"+str(cpuid)+".L1Dcache.replacement_policy]", "block_size" )
   return block_size
 
 def dcache_associativity( cpuid ):
-  assoc = getConfigInDomain( "l1d_cntrl0.L1cache.replacement_policy]", "assoc" )
+  assoc = getConfigInDomain( "l1_cntrl"+str(cpuid)+".L1Dcache.replacement_policy]", "assoc" )
   return assoc
 
 def dcache_bank( cpuid ):
@@ -820,6 +829,7 @@ special_pattern_head_list = [
 
 special_pattern_cpu_list = [
           ("x86"                            , x86),
+          ("machine_type"                   , machine_type),
           ("number_hardware_threads"        , number_hardware_threads),
           ("fetch_width"                    , fetch_width),
           ("number_instruction_fetch_ports" , number_instruction_fetch_ports),

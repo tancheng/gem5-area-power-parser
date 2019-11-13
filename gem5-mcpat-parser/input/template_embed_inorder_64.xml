@@ -17,7 +17,7 @@ omitted -->
     <param name="number_of_L3s" value="0"/>
     <!-- This number means how many L3 clusters -->
     <param name="number_of_NoCs" value="0"/>
-    <param name="homogeneous_cores" value="1"/>
+    <param name="homogeneous_cores" value="0"/>
     <!--1 means homo -->
     <param name="homogeneous_L2s" value="1"/>
     <param name="homogeneous_L1Directories" value="1"/>
@@ -38,7 +38,7 @@ omitted -->
     <!--0: HP(High Performance Type); 1: LSTP(Low standby power) 2: LOP (Low Operating Power)  -->
     <param name="longer_channel_device" value="1"/>
     <!-- 0 no use; 1 use when aggressive -->
-    <param name="Embedded" value="1"/><!-- Embedded processor like ARM or general purpose processors?  -->
+    <param name="Embedded" value="0"/><!-- Embedded processor like ARM or general purpose processors?  -->
     <param name="power_gating" value="1"/>
     <!-- 0 not enabled; 1 enabled -->
     <param name="machine_bits" value="64"/>
