@@ -2,6 +2,8 @@
 ```
  % cd mcpat
  % make
+ % cd ../dsent
+ % make
 ```
 ### Quick start
 ```
@@ -13,3 +15,8 @@
 `output/tuan_test.xml` will generate the mcpat configuration xml.
 
 `output/mcpat_result_tuan` will show the results.
+```
+ % cd ../dsent
+ % ./dsent -cfg configs/electrical-mesh.cfg
+```
+`configs/electrical-mesh.cfg` contains the configuration about the target mesh topology.
