@@ -32,13 +32,13 @@ pattern_head_list = [
                 ]
 
 pattern_cpu_list = [
-#                ("int_instructions"          , re.compile(r'int_instructions')),
-#                ("fp_instructions"           , re.compile(r'fp_instructions')),
+                ("int_instructions"          , re.compile(r'int_insts')),
+                ("fp_instructions"           , re.compile(r'fp_insts')),
                 ("total_instructions"        , re.compile(r'iew.\S+::total|iew.iewExecutedInsts|op_class::total')),
-                ("branch_instructions"       , re.compile(r'branchPred.lookups')),
-                ("branch_mispredictions"     , re.compile(r'branchPredindirectMispredicted')),
-#                ("load_instructions"         , re.compile(r'load_instructions')),
-#                ("store_instructions"        , re.compile(r'store_instructions')),
+                ("load_instructions"         , re.compile(r'num_load_insts|iewExecLoadInsts')),
+                ("store_instructions"        , re.compile(r'num_store_insts|iew.exec_stores')),
+                ("branch_instructions"       , re.compile(r'iew.exec_branches|Branches|branchPred.lookups')),
+                ("branch_mispredictions"     , re.compile(r'branchPredindirectMispredicted|BranchMispred')),
                 ("committed_instructions"    , re.compile(r'num_committed_insts|committedInsts')),
                 ("IntAlu"                    , re.compile(r'IntAlu')),
                 ("IntMult"                   , re.compile(r'IntMult')),
@@ -56,8 +56,18 @@ pattern_cpu_list = [
                 ("MemWrite"                  , re.compile(r'MemWrite')),
                 ("FloatMemRead"              , re.compile(r'FloatMemRead')),
                 ("FloatMemWrite"             , re.compile(r'FloatMemWrite')),
+                ("ialu_accesses"             , re.compile(r'int_alu_accesses')),
+                ("fpu_accesses"              , re.compile(r'fp_alu_accesses')),
+                ("int_regfile_reads"         , re.compile(r'int_register_reads|int_regfile_reads')),
+                ("int_regfile_writes"        , re.compile(r'int_register_writes|int_regfile_writes')),
+                ("float_regfile_reads"       , re.compile(r'fp_register_reads|fp_regfile_reads')),
+                ("float_regfile_writes"      , re.compile(r'fp_register_writes|fp_regfile_writes')),
+                ("ROB_reads"                 , re.compile(r'rob_reads')),
+                ("ROB_writes"                , re.compile(r'rob_writes')),
+                ("rename_reads"              , re.compile(r'int_rename_lookups')),
+                ("fp_rename_reads"           , re.compile(r'fp_rename_lookups')),
                 ("total_cycles"              , re.compile(r'numCycles')),
-#                ("idle_cycles"               , re.compile(r'num_idle_cycles')),
+                ("idle_cycles"               , re.compile(r'num_idle_cycles|idleCycles')),
 #                ("icache_read_accesses"      , re.compile(r'icache.ReadReq_accesses')),
                 ("icache_read_accesses"      , re.compile(r'l1_cntrl\d+.L1Icache.demand_accesses|l1i_cntrl\d+.L1cache.demand_accesses')),
                 ("icache_read_misses"        , re.compile(r'l1_cntrl\d+.L1Icache.demand_misses|l1i_cntrl\d+.L1cache.demand_misses')),
@@ -90,7 +100,7 @@ pattern_tail_list = [
 #   [stat-name]    [stat-val]    [stat-comment]
 
 def extract_val( line ):
-  return int(re.split( r"\s+", line )[ 1 ])
+  return int(float(re.split( r"\s+", line )[ 1 ]))
 
 #------------------------------------------------------------------------------
 # Extract config from a configuration line
@@ -440,12 +450,56 @@ def machine_type( cpuid ):
   else:
     return "1"
 
-def number_hardware_threads( cpuid ):
-  return "1"
-
 #      <param name="fetch_width" value="4"/>
 #      <!-- fetch_width determines the size of cachelines of L1 cache block -->
 def fetch_width( cpuid ):
+  cpuid_str = str(cpuid)
+  if cpuid < 10:
+    cpuid_str = '0' + cpuid_str
+  width = getConfigInDomain( "main_cpu" + cpuid_str + "]", "fetchWidth" )
+  if width == "":
+    return "1"
+  return width
+
+#      <param name="decode_width" value="4"/>
+#      <!-- decode_width determines the number of ports of the
+#	   renaming table (both RAM and CAM) scheme -->
+def decode_width( cpuid ):
+  cpuid_str = str(cpuid)
+  if cpuid < 10:
+    cpuid_str = '0' + cpuid_str
+  width = getConfigInDomain( "main_cpu" + cpuid_str + "]", "decodeWidth" )
+  if width == "":
+    return "1"
+  return width
+
+#      <param name="issue_width" value="4"/>
+def issue_width( cpuid ):
+  cpuid_str = str(cpuid)
+  if cpuid < 10:
+    cpuid_str = '0' + cpuid_str
+  width = getConfigInDomain( "main_cpu" + cpuid_str + "]", "issueWidth" )
+  if width == "":
+    return "1"
+  # FIXME: will occur error if 'return width'
+  return "1"
+
+def fp_issue_width( cpuid ):
+  return issue_width( cpuid )
+
+
+#      <param name="commit_width" value="4"/>
+#      <!-- commit_width determines the number of ports of register files -->
+def commit_width( cpuid ):
+  cpuid_str = str(cpuid)
+  if cpuid < 10:
+    cpuid_str = '0' + cpuid_str
+  width = getConfigInDomain( "main_cpu" + cpuid_str + "]", "commitWidth" )
+  if width == "":
+    return "1"
+  return width
+
+def number_hardware_threads( cpuid ):
   return "1"
 
 #      <!-- number_instruction_fetch_ports(icache ports) is always 1 in single-thread processor,
@@ -455,88 +509,103 @@ def fetch_width( cpuid ):
 def number_instruction_fetch_ports( cpuid ):
   return "1"
 
-#      <param name="decode_width" value="4"/>
-#      <!-- decode_width determines the number of ports of the
-#	   renaming table (both RAM and CAM) scheme -->
-def decode_width( cpuid ):
-  return "1"
-
-#      <param name="issue_width" value="4"/>
-def issue_width( cpuid ):
-  return "1"
-
 #      <param name="peak_issue_width" value="6"/>
 #      <!-- issue_width determines the number of ports of Issue window and other logic
 #	   as in the complexity effective processors paper; issue_width==dispatch_width -->
 def peak_issue_width( cpuid ):
-  return "1"
-
-#      <param name="commit_width" value="4"/>
-#      <!-- commit_width determines the number of ports of register files -->
-def commit_width( cpuid ):
-  return "1"
+  return issue_width( cpuid )
 
 #      <param name="ALU_per_core" value="1"/>
 #      <!-- contains an adder, a shifter, and a logical unit -->
 def ALU_per_core( cpuid ):
+  if machine_type( cpuid ) == "0":
+    return "2"
   return "1"
 
 #      <param name="MUL_per_core" value="2"/>
 #      <!-- For MUL and Div -->
 def MUL_per_core( cpuid ):
+  if machine_type( cpuid ) == "0":
+    return "2"
   return "1"
 
 #      <param name="FPU_per_core" value="1"/>
 def FPU_per_core( cpuid ):
+  if machine_type( cpuid ) == "0":
+    return "2"
   return "1"
 
 #      <!-- buffer between IF and ID stage -->
 #      <param name="instruction_buffer_size" value="32"/>
 def instruction_buffer_size( cpuid ):
-  return "4"
+  cpuid_str = str(cpuid)
+  if cpuid < 10:
+    cpuid_str = '0' + cpuid_str
+  window = getConfigInDomain( "main_cpu" + cpuid_str + "]", "fetchBufferSize" )
+  if window == "":
+    return "4"
+  return window
 
 #      <!-- buffer between ID and sche/exe stage -->
 #      <param name="decoded_stream_buffer_size" value="16"/>
 def decoded_stream_buffer_size( cpuid ):
-  return "4"
+  return instruction_buffer_size( cpuid )
 
 #      <param name="instruction_window_scheme" value="0"/>
 #      <!-- 0 PHYREG based, 1 RSBASED-->
 #      <!-- McPAT support 2 types of OoO cores, RS based and physical reg based-->
 #      <param name="instruction_window_size" value="64"/>
 def instruction_window_size( cpuid ):
-  return "4"
+  return instruction_buffer_size( cpuid )
 
 #      <param name="fp_instruction_window_size" value="64"/>
 #      <!-- the instruction issue Q as in Alpha 21264; The RS as in Intel P6 -->
 def fp_instruction_window_size( cpuid ):
-  return "4"
+  return instruction_window_size( cpuid )
 
 #      <param name="ROB_size" value="128"/>
 #      <!-- each in-flight instruction has an entry in ROB -->
 def ROB_size( cpuid ):
-  return "16"
+  cpuid_str = str(cpuid)
+  if cpuid < 10:
+    cpuid_str = '0' + cpuid_str
+  window = getConfigInDomain( "main_cpu" + cpuid_str + "]", "numROBEntries" )
+  if window == "":
+    return "16"
+  return window
 
 #      <!-- registers -->
 #      <param name="archi_Regs_IRF_size" value="32"/>
 def archi_Regs_IRF_size( cpuid ):
-  return "16"
+  cpuid_str = str(cpuid)
+  if cpuid < 10:
+    cpuid_str = '0' + cpuid_str
+  window = getConfigInDomain( "main_cpu" + cpuid_str + "]", "numPhysIntRegs" )
+  if window == "":
+    return "16"
+  return window
 
 #      <!-- X86-64 has 16GPR -->
 #      <param name="archi_Regs_FRF_size" value="32"/>
 def archi_Regs_FRF_size( cpuid ):
-  return "16"
+  cpuid_str = str(cpuid)
+  if cpuid < 10:
+    cpuid_str = '0' + cpuid_str
+  window = getConfigInDomain( "main_cpu" + cpuid_str + "]", "numPhysFloatRegs" )
+  if window == "":
+    return "16"
+  return window
 
 #      <!-- MMX + XMM -->
 #      <!--  if OoO processor, phy_reg number is needed for renaming logic,
 #	   renaming logic is for both integer and floating point insts.  -->
 #      <param name="phy_Regs_IRF_size" value="256"/>
 def phy_Regs_IRF_size( cpuid ):
-  return "16"
+  return archi_Regs_IRF_size( cpuid )
 
 #      <param name="phy_Regs_FRF_size" value="256"/>
 def phy_Regs_FRF_size( cpuid ):
-  return "16"
+  return archi_Regs_FRF_size( cpuid )
 
 #      <param name="store_buffer_size" value="96"/>
 #      <!-- By default, in-order cores do not have load buffers -->
@@ -572,14 +641,17 @@ def total_instructions( cpuid ):
   return str(total_insts)
 
 def int_instructions( cpuid ):
+  if stats_for_core[ cpuid ][ "int_instructions" ] != 0:
+    return str(stats_for_core[ cpuid ][ "int_instructions" ])
   committed_int_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
                         stats_for_core[ cpuid ][ "IntMult" ] +\
                         stats_for_core[ cpuid ][ "IntDiv" ] +\
                         stats_for_core[ cpuid ][ "No_OpClass" ]
   return str(committed_int_insts)
 
-
 def fp_instructions( cpuid ):
+  if stats_for_core[ cpuid ][ "fp_instructions" ] != 0:
+    return str(stats_for_core[ cpuid ][ "fp_instructions" ])
   committed_fp_insts = stats_for_core[ cpuid ][ "FloatCmp"] +\
                        stats_for_core[ cpuid ][ "FloatCvt" ] +\
                        stats_for_core[ cpuid ][ "FloatMult" ] +\
@@ -591,6 +663,8 @@ def fp_instructions( cpuid ):
 
 
 def committed_int_instructions( cpuid ):
+  if stats_for_core[ cpuid ][ "int_instructions" ] != 0:
+    return str(stats_for_core[ cpuid ][ "int_instructions" ])
   committed_int_insts = stats_for_core[ cpuid ][ "IntAlu" ] +\
                         stats_for_core[ cpuid ][ "IntMult" ] +\
                         stats_for_core[ cpuid ][ "IntDiv" ] +\
@@ -598,6 +672,8 @@ def committed_int_instructions( cpuid ):
   return str(committed_int_insts)
 
 def committed_fp_instructions( cpuid ):
+  if stats_for_core[ cpuid ][ "fp_instructions" ] != 0:
+    return str(stats_for_core[ cpuid ][ "fp_instructions" ])
   committed_fp_insts = stats_for_core[ cpuid ][ "FloatCmp"] +\
                        stats_for_core[ cpuid ][ "FloatCvt" ] +\
                        stats_for_core[ cpuid ][ "FloatMult" ] +\
@@ -610,8 +686,9 @@ def committed_fp_instructions( cpuid ):
 #      <stat name="pipeline_duty_cycle" value="1"/>
 #      <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
 def pipeline_duty_cycle( cpuid ):
-  ipc = float( stats_for_core[ cpuid ][ "committed_instructions" ] ) /\
-        float( stats_for_core[ cpuid ][ "total_cycles" ] )
+  ipc = ( float( stats_for_core[ cpuid ][ "total_cycles" ] ) -\
+          float( stats_for_core[ cpuid ][ "idle_cycles" ] ) ) /\
+          float( stats_for_core[ cpuid ][ "total_cycles" ] )
   return str(ipc)
 
 #      <!-- the following cycle stats are used for heterogeneous cores only,
@@ -620,8 +697,10 @@ def pipeline_duty_cycle( cpuid ):
 #      <stat name="idle_cycles" value="0"/>
 #      <stat name="busy_cycles" value="2367485854"/>
 def busy_cycles( cpuid ):
-  busy_cycle = stats_for_core[ cpuid ]["total_cycles"]
+  busy_cycle = stats_for_core[ cpuid ]["total_cycles"] -\
+               stats_for_core[ cpuid ]["idle_cycles"]
   return str(busy_cycle)
+
 
 #      <!-- Alu stats by default, the processor has one FPU that includes the divider and
 #	   multiplier. The fpu accesses should include accesses to multiplier and divider  -->
@@ -657,11 +736,15 @@ def busy_cycles( cpuid ):
 #      <param name="number_of_BPT" value="2"/>
 
 def ialu_accesses( cpuid ):
-  ialu_accesses = stats_for_core[ cpuid ]["IntAlu"] +\
-                  stats_for_core[ cpuid ]["No_OpClass"]
+  if stats_for_core[ cpuid ][ "ialu_accesses" ] != 0:
+    return str(stats_for_core[ cpuid ][ "ialu_accesses" ])
+  ialu_accesses = stats_for_core[ cpuid ][ "IntAlu" ] +\
+                  stats_for_core[ cpuid ][ "No_OpClass" ]
   return str(ialu_accesses)
 
 def fpu_accesses( cpuid ):
+  if stats_for_core[ cpuid ][ "fpu_accesses" ] != 0:
+    return str(stats_for_core[ cpuid ][ "fpu_accesses" ])
   return str(committed_fp_instructions( cpuid ))
 
 def mul_accesses( cpuid ):
@@ -675,10 +758,11 @@ def getConfigInDomain( domain, item ):
       in_domain = True
     elif in_domain and "[system" in line and domain not in line:
       # return "NOT FOUND"
-      assert( 0 )
+      return ""
     if in_domain and item == line.split("=")[0]:
       config_str = extract_config(line)
       return config_str
+  return ""
 
 #      <component id="system.cpu0.icache" name="icache">
 #        <!-- there is no write requests to itlb although writes happen to it after miss,
@@ -717,7 +801,6 @@ def icache_cache_policy( cpuid ):
   return "1"
 
 def icache_config( cpuid ):
-  print("now serving for cpu: ", cpuid)
   config = icache_capacity( cpuid ) + ", " +\
            icache_block_width( cpuid ) + ", " +\
            icache_associativity( cpuid ) + ", " +\
@@ -778,18 +861,17 @@ def dcache_write_accesses( cpuid ):
 def dcache_write_misses( cpuid ):
   return "0"
 
-# FIXME: wait for Tuan to generate the stats for decode and window
-def rename_reads( cpuid ):
-  return committed_int_instructions( cpuid )
-
-def rename_writes( cpuid ):
-  return "0"
-
-def fp_rename_reads( cpuid ):
-  return committed_fp_instructions( cpuid )
-
-def fp_rename_writes( cpuid ):
-  return "0"
+#def rename_reads( cpuid ):
+#  return committed_int_instructions( cpuid )
+#
+#def rename_writes( cpuid ):
+#  return "0"
+#
+#def fp_rename_reads( cpuid ):
+#  return committed_fp_instructions( cpuid )
+#
+#def fp_rename_writes( cpuid ):
+#  return "0"
 
 def inst_window_reads( cpuid ):
   return committed_int_instructions( cpuid )
@@ -810,10 +892,14 @@ def fp_inst_window_wakeup_accesses( cpuid ):
   return "0"
 
 def load_instructions( cpuid ):
+  if stats_for_core[ cpuid ][ "load_instructions" ] != 0:
+    return str(stats_for_core[ cpuid ][ "load_instructions" ])
   return str(stats_for_core[ cpuid ][ "MemRead" ] +\
              stats_for_core[ cpuid ][ "FloatMemRead" ])
 
 def store_instructions( cpuid ):
+  if stats_for_core[ cpuid ][ "store_instructions" ] != 0:
+    return str(stats_for_core[ cpuid ][ "store_instructions" ])
   return str(stats_for_core[ cpuid ][ "MemWrite" ] +\
              stats_for_core[ cpuid ][ "FloatMemWrite" ])
 
@@ -833,10 +919,12 @@ special_pattern_cpu_list = [
           ("number_hardware_threads"        , number_hardware_threads),
           ("fetch_width"                    , fetch_width),
           ("number_instruction_fetch_ports" , number_instruction_fetch_ports),
+          ("fetch_width"                    , fetch_width),
           ("decode_width"                   , decode_width),
           ("issue_width"                    , issue_width),
-          ("peak_issue_width"               , peak_issue_width),
+          ("fp_issue_width"                  , fp_issue_width),
           ("commit_width"                   , commit_width),
+          ("peak_issue_width"               , peak_issue_width),
           ("ALU_per_core"                   , ALU_per_core),
           ("MUL_per_core"                   , MUL_per_core),
           ("FPU_per_core"                   , FPU_per_core),
@@ -868,11 +956,10 @@ special_pattern_cpu_list = [
           ("load_instructions"              , load_instructions),
           ("store_instructions"             , store_instructions),
 
-          # FIXME: wait for Tuan to generate the stats for decode and window
-          ("rename_reads"                   , rename_reads),
-          ("rename_writes"                  , rename_writes),
-          ("fp_rename_reads"                , fp_rename_reads),
-          ("fp_rename_writes"               , fp_rename_writes),
+#          ("rename_reads"                   , rename_reads),
+#          ("rename_writes"                  , rename_writes),
+#          ("fp_rename_reads"                , fp_rename_reads),
+#          ("fp_rename_writes"               , fp_rename_writes),
           ("inst_window_reads"              , inst_window_reads),
           ("inst_window_writes"             , inst_window_writes),
           ("inst_window_wakeup_accesses"    , inst_window_wakeup_accesses),
