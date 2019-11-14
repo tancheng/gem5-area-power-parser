@@ -143,7 +143,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="8578975"/>
       <stat name="int_instructions" value="1375406"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="834579"/>
@@ -244,8 +244,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="758467"/>
+        <stat name="read_misses" value="104"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu0.dtlb" name="dtlb">
@@ -260,11 +260,11 @@ omitted -->
         <param name="dcache_config" value="65536, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="4323838"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="56594"/>
         <stat name="write_misses" value="0"/>
-        <stat name="conflicts" value="6"/>
+        <stat name="conflicts" value="0"/>
       </component>
       <param name="number_of_BTB" value="2"/>
       <component id="system.cpu0.BTB" name="BTB">
@@ -367,7 +367,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="6545572"/>
       <stat name="int_instructions" value="1202401"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="875047"/>
@@ -468,8 +468,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="555129"/>
+        <stat name="read_misses" value="94"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu1.dtlb" name="dtlb">
@@ -484,9 +484,9 @@ omitted -->
         <param name="dcache_config" value="65536, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="3140922"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="51574"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -591,7 +591,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="6150060"/>
       <stat name="int_instructions" value="1140606"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="915648"/>
@@ -692,8 +692,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="549511"/>
+        <stat name="read_misses" value="95"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu2.dtlb" name="dtlb">
@@ -708,9 +708,9 @@ omitted -->
         <param name="dcache_config" value="65536, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="2920312"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="52527"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -815,7 +815,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="6252256"/>
       <stat name="int_instructions" value="1201368"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="925325"/>
@@ -916,8 +916,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="555305"/>
+        <stat name="read_misses" value="94"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu3.dtlb" name="dtlb">
@@ -932,9 +932,9 @@ omitted -->
         <param name="dcache_config" value="65536, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="2952713"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="51603"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -1039,7 +1039,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3384575"/>
       <stat name="int_instructions" value="761181"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -1140,8 +1140,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3993036"/>
+        <stat name="read_misses" value="322"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu4.dtlb" name="dtlb">
@@ -1156,9 +1156,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1902179"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48329"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -1263,7 +1263,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3429586"/>
       <stat name="int_instructions" value="787086"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -1364,8 +1364,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="4046581"/>
+        <stat name="read_misses" value="449"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu5.dtlb" name="dtlb">
@@ -1380,9 +1380,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1917759"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48469"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -1487,7 +1487,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3437653"/>
       <stat name="int_instructions" value="785286"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -1588,8 +1588,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="4057389"/>
+        <stat name="read_misses" value="453"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu6.dtlb" name="dtlb">
@@ -1604,9 +1604,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1928730"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="49096"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -1711,7 +1711,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3492692"/>
       <stat name="int_instructions" value="781485"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -1812,8 +1812,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="4119888"/>
+        <stat name="read_misses" value="354"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu7.dtlb" name="dtlb">
@@ -1828,9 +1828,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1970234"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48954"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -1935,7 +1935,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3235656"/>
       <stat name="int_instructions" value="763100"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -2036,8 +2036,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3824406"/>
+        <stat name="read_misses" value="349"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu8.dtlb" name="dtlb">
@@ -2052,9 +2052,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1805287"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="45098"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -2159,7 +2159,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3300698"/>
       <stat name="int_instructions" value="709540"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -2260,8 +2260,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3888524"/>
+        <stat name="read_misses" value="291"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu9.dtlb" name="dtlb">
@@ -2276,9 +2276,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1874530"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48138"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -2383,7 +2383,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3414716"/>
       <stat name="int_instructions" value="789363"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -2484,8 +2484,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="4032857"/>
+        <stat name="read_misses" value="431"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu10.dtlb" name="dtlb">
@@ -2500,9 +2500,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1905159"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48450"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -2607,7 +2607,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3390173"/>
       <stat name="int_instructions" value="785162"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -2708,8 +2708,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3999070"/>
+        <stat name="read_misses" value="526"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu11.dtlb" name="dtlb">
@@ -2724,9 +2724,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1890983"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="50621"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -2831,7 +2831,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3175704"/>
       <stat name="int_instructions" value="713494"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -2932,8 +2932,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3746878"/>
+        <stat name="read_misses" value="292"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu12.dtlb" name="dtlb">
@@ -2948,9 +2948,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1786211"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="46481"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -3055,7 +3055,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3201381"/>
       <stat name="int_instructions" value="719571"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -3156,8 +3156,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3777726"/>
+        <stat name="read_misses" value="273"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu13.dtlb" name="dtlb">
@@ -3172,9 +3172,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1801622"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="46418"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -3279,7 +3279,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3296051"/>
       <stat name="int_instructions" value="689102"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -3380,8 +3380,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3878408"/>
+        <stat name="read_misses" value="237"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu14.dtlb" name="dtlb">
@@ -3396,9 +3396,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1884601"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48331"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -3503,7 +3503,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3214634"/>
       <stat name="int_instructions" value="739983"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -3604,8 +3604,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3798287"/>
+        <stat name="read_misses" value="234"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu15.dtlb" name="dtlb">
@@ -3620,9 +3620,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1802947"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="46490"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -3727,7 +3727,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3708539"/>
       <stat name="int_instructions" value="802047"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -3828,8 +3828,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="4360051"/>
+        <stat name="read_misses" value="601"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu16.dtlb" name="dtlb">
@@ -3844,9 +3844,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="2096492"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="52734"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -3951,7 +3951,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3030332"/>
       <stat name="int_instructions" value="671973"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -4052,8 +4052,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3574106"/>
+        <stat name="read_misses" value="250"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu17.dtlb" name="dtlb">
@@ -4068,9 +4068,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1711660"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="44511"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -4175,7 +4175,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3133326"/>
       <stat name="int_instructions" value="686002"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -4276,8 +4276,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3695185"/>
+        <stat name="read_misses" value="204"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu18.dtlb" name="dtlb">
@@ -4292,9 +4292,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1767527"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="45903"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -4399,7 +4399,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3313610"/>
       <stat name="int_instructions" value="694524"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -4500,8 +4500,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3891616"/>
+        <stat name="read_misses" value="432"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu19.dtlb" name="dtlb">
@@ -4516,9 +4516,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1891723"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48144"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -4623,7 +4623,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3142171"/>
       <stat name="int_instructions" value="696808"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -4724,8 +4724,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3703499"/>
+        <stat name="read_misses" value="342"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu20.dtlb" name="dtlb">
@@ -4740,9 +4740,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1769241"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="46381"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -4847,7 +4847,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3121478"/>
       <stat name="int_instructions" value="652153"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -4948,8 +4948,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3673119"/>
+        <stat name="read_misses" value="239"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu21.dtlb" name="dtlb">
@@ -4964,9 +4964,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1780618"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="45905"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -5071,7 +5071,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3329862"/>
       <stat name="int_instructions" value="751227"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -5172,8 +5172,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3927785"/>
+        <stat name="read_misses" value="342"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu22.dtlb" name="dtlb">
@@ -5188,9 +5188,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1864477"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="46845"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -5295,7 +5295,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3192964"/>
       <stat name="int_instructions" value="749748"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -5396,8 +5396,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3773389"/>
+        <stat name="read_misses" value="353"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu23.dtlb" name="dtlb">
@@ -5412,9 +5412,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1780214"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="44725"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -5519,7 +5519,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3080360"/>
       <stat name="int_instructions" value="651036"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -5620,8 +5620,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3626167"/>
+        <stat name="read_misses" value="209"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu24.dtlb" name="dtlb">
@@ -5636,9 +5636,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1755855"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="44352"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -5743,7 +5743,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3322082"/>
       <stat name="int_instructions" value="709279"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -5844,8 +5844,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3907020"/>
+        <stat name="read_misses" value="469"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu25.dtlb" name="dtlb">
@@ -5860,9 +5860,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1884243"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48313"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -5967,7 +5967,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3260498"/>
       <stat name="int_instructions" value="738759"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -6068,8 +6068,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3842849"/>
+        <stat name="read_misses" value="446"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu26.dtlb" name="dtlb">
@@ -6084,9 +6084,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1825566"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="46648"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -6191,7 +6191,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3059905"/>
       <stat name="int_instructions" value="605367"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -6292,8 +6292,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3593289"/>
+        <stat name="read_misses" value="201"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu27.dtlb" name="dtlb">
@@ -6308,9 +6308,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1763780"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="47231"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -6415,7 +6415,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3048170"/>
       <stat name="int_instructions" value="637414"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -6516,8 +6516,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3583106"/>
+        <stat name="read_misses" value="329"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu28.dtlb" name="dtlb">
@@ -6532,9 +6532,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1739783"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="45881"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -6639,7 +6639,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2954319"/>
       <stat name="int_instructions" value="656473"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -6740,8 +6740,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3485951"/>
+        <stat name="read_misses" value="224"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu29.dtlb" name="dtlb">
@@ -6756,9 +6756,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1662912"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43999"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -6863,7 +6863,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2989048"/>
       <stat name="int_instructions" value="707287"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -6964,8 +6964,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3535713"/>
+        <stat name="read_misses" value="297"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu30.dtlb" name="dtlb">
@@ -6980,9 +6980,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1664397"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43972"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -7087,7 +7087,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3307545"/>
       <stat name="int_instructions" value="796110"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -7188,8 +7188,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3908268"/>
+        <stat name="read_misses" value="538"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu31.dtlb" name="dtlb">
@@ -7204,9 +7204,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1832347"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="48433"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -7311,7 +7311,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2828758"/>
       <stat name="int_instructions" value="658531"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -7412,8 +7412,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3342613"/>
+        <stat name="read_misses" value="252"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu32.dtlb" name="dtlb">
@@ -7428,9 +7428,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1585337"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="40906"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -7535,7 +7535,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2848519"/>
       <stat name="int_instructions" value="641290"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -7636,8 +7636,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3362667"/>
+        <stat name="read_misses" value="196"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu33.dtlb" name="dtlb">
@@ -7652,9 +7652,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1601850"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="41713"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -7759,7 +7759,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3111182"/>
       <stat name="int_instructions" value="663677"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -7860,8 +7860,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3658029"/>
+        <stat name="read_misses" value="378"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu34.dtlb" name="dtlb">
@@ -7876,9 +7876,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1768125"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="46386"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -7983,7 +7983,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2900517"/>
       <stat name="int_instructions" value="639482"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -8084,8 +8084,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3420788"/>
+        <stat name="read_misses" value="219"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu35.dtlb" name="dtlb">
@@ -8100,9 +8100,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1634821"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43204"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -8207,7 +8207,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2988382"/>
       <stat name="int_instructions" value="642991"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -8308,8 +8308,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3519109"/>
+        <stat name="read_misses" value="261"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu36.dtlb" name="dtlb">
@@ -8324,9 +8324,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1694675"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="44880"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -8431,7 +8431,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3355065"/>
       <stat name="int_instructions" value="727449"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -8532,8 +8532,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3948542"/>
+        <stat name="read_misses" value="432"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu37.dtlb" name="dtlb">
@@ -8548,9 +8548,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1894082"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="47767"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -8655,7 +8655,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3413410"/>
       <stat name="int_instructions" value="803482"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -8756,8 +8756,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="4026993"/>
+        <stat name="read_misses" value="522"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu38.dtlb" name="dtlb">
@@ -8772,9 +8772,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1890839"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="47674"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -8879,7 +8879,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3469112"/>
       <stat name="int_instructions" value="705331"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -8980,8 +8980,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="4067486"/>
+        <stat name="read_misses" value="466"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu39.dtlb" name="dtlb">
@@ -8996,9 +8996,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1996584"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="50111"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -9103,7 +9103,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2993762"/>
       <stat name="int_instructions" value="665807"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -9204,8 +9204,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3530131"/>
+        <stat name="read_misses" value="325"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu40.dtlb" name="dtlb">
@@ -9220,9 +9220,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1690958"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="42966"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -9327,7 +9327,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2993117"/>
       <stat name="int_instructions" value="645393"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -9428,8 +9428,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3524328"/>
+        <stat name="read_misses" value="283"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu41.dtlb" name="dtlb">
@@ -9444,9 +9444,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1697767"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="44182"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -9551,7 +9551,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2858601"/>
       <stat name="int_instructions" value="634560"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -9652,8 +9652,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3370161"/>
+        <stat name="read_misses" value="278"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu42.dtlb" name="dtlb">
@@ -9668,9 +9668,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1614063"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43050"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -9775,7 +9775,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2958655"/>
       <stat name="int_instructions" value="672370"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -9876,8 +9876,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3488263"/>
+        <stat name="read_misses" value="414"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu43.dtlb" name="dtlb">
@@ -9892,9 +9892,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1660473"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="44713"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -9999,7 +9999,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3046040"/>
       <stat name="int_instructions" value="664195"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -10100,8 +10100,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3588427"/>
+        <stat name="read_misses" value="328"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu44.dtlb" name="dtlb">
@@ -10116,9 +10116,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1718973"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="44621"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -10223,7 +10223,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2947497"/>
       <stat name="int_instructions" value="660571"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -10324,8 +10324,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3476532"/>
+        <stat name="read_misses" value="298"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu45.dtlb" name="dtlb">
@@ -10340,9 +10340,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1661024"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43530"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -10447,7 +10447,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3147379"/>
       <stat name="int_instructions" value="634132"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -10548,8 +10548,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3692566"/>
+        <stat name="read_misses" value="318"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu46.dtlb" name="dtlb">
@@ -10564,9 +10564,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1812706"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="45340"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -10671,7 +10671,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2925642"/>
       <stat name="int_instructions" value="660306"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -10772,8 +10772,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3454601"/>
+        <stat name="read_misses" value="184"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu47.dtlb" name="dtlb">
@@ -10788,9 +10788,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1651170"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43656"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -10895,7 +10895,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3099774"/>
       <stat name="int_instructions" value="663880"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -10996,8 +10996,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3643425"/>
+        <stat name="read_misses" value="319"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu48.dtlb" name="dtlb">
@@ -11012,9 +11012,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1766463"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="42817"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -11119,7 +11119,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2946495"/>
       <stat name="int_instructions" value="673660"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -11220,8 +11220,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3479850"/>
+        <stat name="read_misses" value="260"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu49.dtlb" name="dtlb">
@@ -11236,9 +11236,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1650690"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="42239"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -11343,7 +11343,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2938916"/>
       <stat name="int_instructions" value="610388"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -11444,8 +11444,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3455043"/>
+        <stat name="read_misses" value="247"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu50.dtlb" name="dtlb">
@@ -11460,9 +11460,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1683760"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43447"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -11567,7 +11567,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2952725"/>
       <stat name="int_instructions" value="646605"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -11668,8 +11668,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3480671"/>
+        <stat name="read_misses" value="271"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu51.dtlb" name="dtlb">
@@ -11684,9 +11684,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1668253"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43011"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -11791,7 +11791,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3132109"/>
       <stat name="int_instructions" value="701776"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -11892,8 +11892,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3691229"/>
+        <stat name="read_misses" value="445"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu52.dtlb" name="dtlb">
@@ -11908,9 +11908,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1755199"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="44927"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -12015,7 +12015,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3004994"/>
       <stat name="int_instructions" value="664510"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -12116,8 +12116,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3543186"/>
+        <stat name="read_misses" value="255"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu53.dtlb" name="dtlb">
@@ -12132,9 +12132,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1694542"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43569"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -12239,7 +12239,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2961579"/>
       <stat name="int_instructions" value="680297"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -12340,8 +12340,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3498406"/>
+        <stat name="read_misses" value="290"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu54.dtlb" name="dtlb">
@@ -12356,9 +12356,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1659473"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="42498"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -12463,7 +12463,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2890645"/>
       <stat name="int_instructions" value="658682"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -12564,8 +12564,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3413455"/>
+        <stat name="read_misses" value="228"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu55.dtlb" name="dtlb">
@@ -12580,9 +12580,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1627448"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="41235"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -12687,7 +12687,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2789702"/>
       <stat name="int_instructions" value="659320"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -12788,8 +12788,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3298521"/>
+        <stat name="read_misses" value="249"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu56.dtlb" name="dtlb">
@@ -12804,9 +12804,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1562983"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="39192"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -12911,7 +12911,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2750571"/>
       <stat name="int_instructions" value="611645"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -13012,8 +13012,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3244052"/>
+        <stat name="read_misses" value="257"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu57.dtlb" name="dtlb">
@@ -13028,9 +13028,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1562705"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="41258"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -13135,7 +13135,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2905088"/>
       <stat name="int_instructions" value="648432"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -13236,8 +13236,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3424420"/>
+        <stat name="read_misses" value="305"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu58.dtlb" name="dtlb">
@@ -13252,9 +13252,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1640392"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="41459"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -13359,7 +13359,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3056486"/>
       <stat name="int_instructions" value="683999"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -13460,8 +13460,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3603519"/>
+        <stat name="read_misses" value="285"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu59.dtlb" name="dtlb">
@@ -13476,9 +13476,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1719611"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43381"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -13583,7 +13583,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="3033063"/>
       <stat name="int_instructions" value="677813"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -13684,8 +13684,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3576128"/>
+        <stat name="read_misses" value="300"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu60.dtlb" name="dtlb">
@@ -13700,9 +13700,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1707674"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="43243"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -13807,7 +13807,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2997146"/>
       <stat name="int_instructions" value="682911"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -13908,8 +13908,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3536064"/>
+        <stat name="read_misses" value="311"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu61.dtlb" name="dtlb">
@@ -13924,9 +13924,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1684111"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="42864"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -14031,7 +14031,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2866241"/>
       <stat name="int_instructions" value="686512"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -14132,8 +14132,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3392980"/>
+        <stat name="read_misses" value="210"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu62.dtlb" name="dtlb">
@@ -14148,9 +14148,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1594129"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="40897"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>
@@ -14255,7 +14255,7 @@ omitted -->
       <param name="RAS_size" value="16"/>
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="0"/>
+      <stat name="total_instructions" value="2852646"/>
       <stat name="int_instructions" value="697895"/>
       <stat name="fp_instructions" value="0"/>
       <stat name="branch_instructions" value="0"/>
@@ -14356,8 +14356,8 @@ omitted -->
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4, 4, 4,0"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_accesses" value="3381031"/>
+        <stat name="read_misses" value="205"/>
         <stat name="conflicts" value="0"/>
       </component>
       <component id="system.cpu63.dtlb" name="dtlb">
@@ -14372,9 +14372,9 @@ omitted -->
         <param name="dcache_config" value="4096, 64, 2, 1, 1, 1, 64, 1"/>
         <param name="buffer_sizes" value="4, 4, 4, 4"/>
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="0"/>
+        <stat name="read_accesses" value="1577815"/>
         <stat name="write_accesses" value="0"/>
-        <stat name="read_misses" value="0"/>
+        <stat name="read_misses" value="39997"/>
         <stat name="write_misses" value="0"/>
         <stat name="conflicts" value="0"/>
       </component>

@@ -205,18 +205,21 @@ def replaceValues():
     for stats_line in util.stats_lines:
       if re.search( stats_pattern, stats_line ):
         value = str( util.extract_val(stats_line) )
-        cpuid_pattern = re.findall( r'system.\S+cpu[0-9]+.', stats_line )
-        print( "checking... value: ", value, stats_line )
+        if "system.ruby" not in stats_line:
+          cpuid_pattern = re.findall( r'system.\S+cpu[0-9]+.', stats_line )[0]
+        else:
+          cpuid_pattern = re.findall( r'[0-9]+', stats_line )[1]
         if len(cpuid_pattern) != 0:
-          cpuid = int(re.findall(r'[0-9]+', cpuid_pattern[0])[0])
+          cpuid = int(re.findall(r'[0-9]+', cpuid_pattern)[0])
 
+        print( "cpu ", cpuid, "checking... value: ", value, stats_line )
         util.stats_for_core[cpuid][xml_pattern] = long(value)
         for line_index in range(len(util.xml_core[cpuid])):
           xml_line = util.xml_core[cpuid][line_index]
           if re.search( xml_pattern, xml_line ):
             util.xml_core[cpuid][line_index] = re.sub(r'\d+', value, xml_line)
             print( "replace item in cpu[", cpuid, "]: ", xml_pattern, util.xml_core[cpuid][line_index], value )
-            print( util.stats_for_core )
+#            print( util.stats_for_core )
             break
 #        break
 
